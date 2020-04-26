@@ -1,10 +1,11 @@
 <template>
-    <ul :class="`nav-level--${level}`">
+    <ul class='vsb-nav-list' :class="`nav-level--${level}`">
         <NavigationItem
             v-for="(item, index) in tree"
             :key="index"
             :item="item"
             :level="level"
+            :articleNav="articleNav"
         />
     </ul>
 </template>
@@ -18,13 +19,17 @@
             level: {
                 type: Number,
                 default: () => 1
-            }
+            },
+            articleNav: {
+                type: Boolean,
+                default: false
+            },
         },
     }
 </script>
 
 <style>
-    ul {
+    .vsb-nav-list {
         padding: 0;
         margin: 0;
         list-style: none;

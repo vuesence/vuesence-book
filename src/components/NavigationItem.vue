@@ -1,31 +1,32 @@
 <template>
     <li
-        class="nav-item"
-        :class="`nav-item--${level}`"
+        class="vsb-nav-item"
+        :class="`vsb-nav-item--${level}`"
     >
-        <div class="nav-title">
+        <div class="vsb-nav-title">
             <router-link
                 :is="(item.to || !item.sections) ? 'router-link' : 'div'"
                 :to="item.to || {name: 'article', params: {id: item.id}}"
-                @click="onClick"
-                class="nav-link"
-                active-class1="nav-link--active"
-                :class="{'nav-link--active': item.isActive}"
+                @click.native="handleScrollToSection"
+                @click="handleExpand"
+                class="vsb-nav-link"
+                :class="{'vsb-nav-link--active': item.isActive}"
             >
                 {{item.title}}
             </router-link>
-            <div v-if="hasChildren" class="nav-toggle" @clicsectionsk="isExpanded = !isExpanded">
+            <div v-if="hasChildren" class="vsb-nav-toggle" @clicsectionsk="isExpanded = !isExpanded">
                 {{isExpanded ? '-' : '+'}}
             </div>
         </div>
 
         <div
             v-if="hasChildren && isExpanded"
-            class="nav-children"
+            class="vsb-nav-children"
         >
             <NavigationItemContent
                 :tree="item.sections"
                 :level="level + 1"
+                :articleNav="articleNav"
             />
         </div>
     </li>
@@ -33,6 +34,8 @@
 
 <script>
     import NavigationItemContent from "./NavigationItemContent";
+    import VsbEventBus from "../vsb-event-bus";
+    
     export default {
         name: "NavigationItem",
         components: {NavigationItemContent},
@@ -44,12 +47,19 @@
         props: {
             item: Object,
             level: Number,
+            articleNav: {
+                type: Boolean,
+                default: false
+            },
         },
         methods: {
-            onClick() {
+            handleExpand() {
                 if(this.hasChildren) {
                     this.isExpanded = !this.isExpanded
                 }
+            },
+            handleScrollToSection() {
+                VsbEventBus.$emit("scrollTo", this.item);
             }
         },
         data() {
@@ -61,18 +71,18 @@
 </script>
 
 <style>
-    .nav-children {
+    .vsb-nav-children {
         padding-left: 14px;
     }
 
-    .nav-title {
+    .vsb-nav-title {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 6px;
         cursor: pointer;
     }
 
-    .nav-toggle {
+    .vsb-nav-toggle {
         height: 20px;
         width: 20px;
         display: flex;
@@ -82,15 +92,15 @@
         background: #efefef;
     }
 
-    .nav-item {
+    .vsb-nav-item {
         margin-top: 10px;
     }
 
-    .nav-link--active {
+    .vsb-nav-link--active {
         font-weight: bold;
     }
 
-    .main-navigation .router-link-active {
+    .vsb-main-navigation .router-link-active {
         font-weight: bold;
     }
 </style>

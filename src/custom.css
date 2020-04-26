@@ -1,0 +1,27 @@
+.vsb {
+	padding: 30px;
+}
+
+.vsb .vsb-main-nav {
+
+}
+
+.vsb .vsb-article-container {
+
+}
+.vsb .vsb-article-nav {
+
+}
+
+.vsb .vsb-nav-list {
+
+}
+
+.vsb .vsb-nav-item {
+    margin-top: 10px;
+}
+
+
+.vsb-article-navigation .vsb-nav-toggle {
+    display: none;
+}

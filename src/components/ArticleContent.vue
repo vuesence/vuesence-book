@@ -1,5 +1,5 @@
 <template>
-    <div ref="page" v-html="content"/>
+    <div class='vsb-article-content' ref="page" v-html="content"/>
 </template>
 
 <script>
@@ -8,8 +8,6 @@
         props: ['articles'],
         computed: {
             content() {
-                console.log(this.$route.params.id);
-                
                 return this.articles[this.$route.params.id]
             }
         },

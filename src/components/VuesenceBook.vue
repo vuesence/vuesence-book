@@ -1,11 +1,9 @@
 <template>
-	<section class="vuesence-book">
-		<aside class="main-navigation">
+	<section data-component="vuesence-book" class="vsb">
+		<aside class="vsb-main-navigation">
 			<BookNavigation :config="config" />
 		</aside>
-		<main class="content">
-			<ArticleContainer :articles="articles" />
-		</main>
+		<ArticleContainer :articles="articles" />		
 	</section>
 </template>
 
@@ -62,7 +60,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* body {
 	margin: 0;
 } */
@@ -71,7 +69,7 @@ export default {
 	font-size: 2em;;
 } */
 
-.vuesence-book {
+.vsb {
 	display: grid;
 	align-items: flex-start;
 	grid-template-columns: 200px auto;
@@ -79,11 +77,11 @@ export default {
 	padding: 10px;
 }
 
-.main-navigation {
+.vsb-main-navigation {
 	position: sticky;
 	top: 10px;
 }
 
-.content {
-}
+/* .content {
+} */
 </style>

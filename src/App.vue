@@ -18,20 +18,8 @@ export default {
 body {
 	margin: 0;
 }
+</style>
 
-/* .app {
-	display: grid;
-	align-items: flex-start;
-	grid-template-columns: 200px auto;
-	grid-gap: 20px;
-	padding: 10px;
-}
-
-.main-navigation {
-	position: sticky;
-	top: 10px;
-} */
-
-.content {
-}
+<style>
+    @import './custom.css';
 </style>
