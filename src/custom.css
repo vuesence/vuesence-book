@@ -25,3 +25,7 @@
 .vsb-article-navigation .vsb-nav-toggle {
     display: none;
 }
+
+html {
+    scroll-behavior: smooth;
+  }

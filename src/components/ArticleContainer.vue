@@ -32,7 +32,7 @@
             VsbEventBus.$on("scrollTo", (item) => {
                 console.log(item.topOffset);
                 // this.$el.scrollTop =item.topOffset;
-                window.scrollTo(0, item.topOffset);
+                window.scrollTo(0, item.topOffset - 50);
             })
         },
         beforeDestroy() {
@@ -41,26 +41,35 @@
         },
         methods: {
             handleScroll() {
-                const offsets = Array
-                    .from(
-                        this.$refs.articleContent.querySelectorAll('h1,h2,h3,h4,h5,h6')
-                    )
-                    .map((item) => item.getBoundingClientRect().top)
+                const offsets = 
+                    this.articleNavList
+                    .map((item) => item.el.getBoundingClientRect().top)
                     .map((item, index) => item > 0  ? index : null)
                     .filter(item => item !== null)
 
                 if(offsets.length > 0) {
-                    Object.values(this.articleNavList).forEach((item) => {
-                        item.isActive = false
-                    })
-                    this.articleNavList[offsets[0]].isActive = true;
+
+                    console.log(this.articleNavList[offsets[0]].title);
+                    console.log(this.articleNavList[offsets[0]].el.getBoundingClientRect().top);
+                    
+                    
+                    if (this.articleNavList[offsets[0]].el.getBoundingClientRect().top < 100
+                        // || offsets.length == 1
+                        ) {
+                        Object.values(this.articleNavList).forEach((item) => {
+                            item.isActive = false
+                        })
+                        this.articleNavList[offsets[0]].isActive = true;
+                    } else {
+                        // this.articleNavList[offsets[1]].isActive = true;
+                    }
                 }
             },
             async calculateHeadings() {
                 await this.$nextTick()
 
                 this.articleNavTree = []
-                this.articleNavList = {}
+                this.articleNavList = []
 
                 const headings = Array.from(this.$refs.articleContent.querySelectorAll('h1,h2,h3,h4,h5,h6'))
 
@@ -71,6 +80,7 @@
                     const item = {
                         to: {hash: domItem.id},
                         title: domItem.innerHTML,
+                        el: domItem,
                         sections: [],
                         topOffset: domItem.offsetTop,
                         isActive: false,
