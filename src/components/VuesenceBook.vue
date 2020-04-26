@@ -1,13 +1,12 @@
 <template>
-	<div id="vb" class="vb">
+	<section class="vuesence-book">
 		<aside class="main-navigation">
 			<BookNavigation :config="config" />
 		</aside>
 		<main class="content">
-			<!-- <router-view1 /> -->
-			<ArticleContainer />
+			<ArticleContainer :records="records" />
 		</main>
-	</div>
+	</section>
 </template>
 
 <script>
@@ -24,7 +23,7 @@ export default {
 		}
 	},
 	created() {
-		this.$store.dispatch("loadConfig");
+		// this.$store.dispatch("loadConfig");
 		{
             const xhr = new XMLHttpRequest()
             xhr.open('GET', 'config.json', true)
@@ -64,11 +63,11 @@ export default {
 </script>
 
 <style>
-body {
+/* body {
 	margin: 0;
-}
+} */
 
-.vb {
+.vuesence-book {
 	display: grid;
 	align-items: flex-start;
 	grid-template-columns: 200px auto;

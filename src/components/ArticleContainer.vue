@@ -2,11 +2,11 @@
     <div class="page">
         <main ref="page" class="content">
             <!-- <router-view/> -->
-            <ArticleContent />
+            <ArticleContent :records="records" />
             
         </main>
         <aside class="article-navigation">
-            <NavigationItemContent :tree="pageTree"/>
+            <NavigationItemContent :tree="articleNavTree"/>
         </aside>
     </div>
 </template>
@@ -19,10 +19,11 @@
     export default {
         name: "ArticleContainer",
         components: {NavigationItemContent, ArticleContent},
+        props: ['records'],
         data() {
             return {
-                list: {},
-                pageTree: []
+                articleNavList: {},
+                articleNavTree: []
             }
         },
         mounted() {
@@ -44,17 +45,17 @@
                     .filter(item => item !== null)
 
                 if(offsets.length > 0) {
-                    Object.values(this.list).forEach((item) => {
+                    Object.values(this.articleNavList).forEach((item) => {
                         item.isActive = false
                     })
-                    this.list[offsets[0]].isActive = true;
+                    this.articleNavList[offsets[0]].isActive = true;
                 }
             },
             async calculateHeadings() {
                 await this.$nextTick()
 
-                const root = []
-                const list = {}
+                this.articleNavTree = []
+                this.articleNavList = {}
 
                 const headings = Array.from(this.$refs.page.querySelectorAll('h1,h2,h3,h4,h5,h6'))
 
@@ -80,7 +81,7 @@
                     }
 
                     items.push(item)
-                    list[index] = item
+                    this.articleNavList[index] = item
                 }
 
                 const DOMHeadings = Array.from(
@@ -91,12 +92,9 @@
 
                 headings.forEach((heading, index) => {
                     if(heading.tagName.toLowerCase() === `h${min}`) {
-                        buildItem(root, index)
+                        buildItem(this.articleNavTree, index)
                     }
                 })
-
-                this.pageTree = root
-                this.list = list
 
                 await this.$nextTick
                 this.handleScroll()
@@ -111,8 +109,7 @@
         },
         computed: {
             content() {
-                return this.$store.state.records[this.$route.params.id]
-                // return VuesenceBook.records[this.$route.params.id]
+                return this.records[this.$route.params.id]
             }
         }
     }

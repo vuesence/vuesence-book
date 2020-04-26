@@ -1,5 +1,5 @@
 <template>
-    <ul class="nav">
+    <ul :class="`nav-level--${level}`">
         <NavigationItem
             v-for="(item, index) in tree"
             :key="index"
@@ -24,7 +24,7 @@
 </script>
 
 <style>
-    .nav {
+    ul {
         padding: 0;
         margin: 0;
         list-style: none;

@@ -1,6 +1,7 @@
 <template>
     <NavigationItemContent
-        :tree="config"
+        :tree='config'
+        :level=0
     />
 </template>
 

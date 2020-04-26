@@ -3,10 +3,10 @@
         class="nav-item"
         :class="`nav-item--${level}`"
     >
-        <div class="nav-link-wrapper">
+        <div class="nav-title">
             <router-link
-                :is="(item.to || item.id) ? 'router-link' : 'div'"
-                :to="item.to || {name: 'json-page', params: {id: item.id}}"
+                :is="(item.to || !item.sections) ? 'router-link' : 'div'"
+                :to="item.to || {name: 'article', params: {id: item.id}}"
                 @click="onClick"
                 class="nav-link"
                 active-class1="nav-link--active"
@@ -14,7 +14,7 @@
             >
                 {{item.title}}
             </router-link>
-            <div v-if="hasChildren" class="nav-toggle" @click="isExpanded = !isExpanded">
+            <div v-if="hasChildren" class="nav-toggle" @clicsectionsk="isExpanded = !isExpanded">
                 {{isExpanded ? '-' : '+'}}
             </div>
         </div>
@@ -65,10 +65,11 @@
         padding-left: 14px;
     }
 
-    .nav-link-wrapper {
+    .nav-title {
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 6px;
+        cursor: pointer;
     }
 
     .nav-toggle {
