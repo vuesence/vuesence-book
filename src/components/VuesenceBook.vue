@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import BookNavigation from "./navigation/BookNavigation";
-import ArticleContainer from "./article/ArticleContainer";
+import BookNavigation from "./BookNavigation";
+import ArticleContainer from "./ArticleContainer";
 
 export default {
 	name: "VuesenceBook",

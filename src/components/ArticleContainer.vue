@@ -12,8 +12,8 @@
 </template>
 
 <script>
-    import NavigationItemContent from "../navigation/NavigationItemContent";
-    import ArticleContent from "../article/ArticleContent";
+    import NavigationItemContent from "./NavigationItemContent";
+    import ArticleContent from "./ArticleContent";
     // import VuesenceBook from "../VuesenceBook";
 
     export default {

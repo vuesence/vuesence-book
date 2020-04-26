@@ -1,8 +1,8 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import IndexPage from "./components/article/IndexPage";
-import ArticleContent from "./components/article/ArticleContent";
-import ArticleContainer from "./components/article/ArticleContainer";
+import IndexPage from "./components/IndexPage";
+import ArticleContent from "./components/ArticleContent";
+import ArticleContainer from "./components/ArticleContainer";
 
 Vue.use(VueRouter)
 
