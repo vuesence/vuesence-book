@@ -4,7 +4,7 @@
 			<BookNavigation :config="config" />
 		</aside>
 		<main class="content">
-			<ArticleContainer :records="records" />
+			<ArticleContainer :articles="articles" />
 		</main>
 	</section>
 </template>
@@ -19,7 +19,7 @@ export default {
 	data() {
 		return {
 			config: [],
-			records: {},
+			articles: {},
 		}
 	},
 	created() {
@@ -33,11 +33,11 @@ export default {
 
                     this.config =  tree;
 
-                    const records = {};
+                    const articles = {};
 
                     const getRecords = (record) => {
                         if(record.content) {
-                            records[record.id] = record.content
+                            articles[record.id] = record.content
                         }
 
                         if(record.sections) {
@@ -51,7 +51,7 @@ export default {
                         getRecords(record)
                     })
 
-                    this.records = records;
+                    this.articles = articles;
                 }
             }
 
@@ -62,9 +62,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* body {
 	margin: 0;
+} */
+
+/* >>> .nav-title {
+	font-size: 2em;;
 } */
 
 .vuesence-book {

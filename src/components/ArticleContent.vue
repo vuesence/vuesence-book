@@ -5,12 +5,12 @@
 <script>
     export default {
         name: "ArticleContent",
-        props: ['records'],
+        props: ['articles'],
         computed: {
             content() {
                 console.log(this.$route.params.id);
                 
-                return this.records[this.$route.params.id]
+                return this.articles[this.$route.params.id]
             }
         },
         watch: {

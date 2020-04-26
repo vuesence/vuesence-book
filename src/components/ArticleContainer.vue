@@ -2,7 +2,7 @@
     <div class="page">
         <main ref="page" class="content">
             <!-- <router-view/> -->
-            <ArticleContent :records="records" />
+            <ArticleContent :articles="articles" />
             
         </main>
         <aside class="article-navigation">
@@ -19,7 +19,7 @@
     export default {
         name: "ArticleContainer",
         components: {NavigationItemContent, ArticleContent},
-        props: ['records'],
+        props: ['articles'],
         data() {
             return {
                 articleNavList: {},
@@ -109,7 +109,7 @@
         },
         computed: {
             content() {
-                return this.records[this.$route.params.id]
+                return this.articles[this.$route.params.id]
             }
         }
     }
