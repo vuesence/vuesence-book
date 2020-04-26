@@ -1,7 +1,9 @@
 <template>
     <div class="page">
         <main ref="page" class="content">
-            <router-view/>
+            <!-- <router-view/> -->
+            <ArticleContent />
+            
         </main>
         <aside class="article-navigation">
             <NavigationItemContent :tree="pageTree"/>
@@ -11,11 +13,12 @@
 
 <script>
     import NavigationItemContent from "../navigation/NavigationItemContent";
+    import ArticleContent from "../article/ArticleContent";
     // import VuesenceBook from "../VuesenceBook";
 
     export default {
         name: "ArticleContainer",
-        components: {NavigationItemContent},
+        components: {NavigationItemContent, ArticleContent},
         data() {
             return {
                 list: {},

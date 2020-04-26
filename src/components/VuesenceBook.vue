@@ -4,17 +4,19 @@
 			<BookNavigation :config="config" />
 		</aside>
 		<main class="content">
-			<router-view />
+			<!-- <router-view1 /> -->
+			<ArticleContainer />
 		</main>
 	</div>
 </template>
 
 <script>
 import BookNavigation from "./navigation/BookNavigation";
+import ArticleContainer from "./article/ArticleContainer";
 
 export default {
 	name: "VuesenceBook",
-	components: { BookNavigation },
+	components: { BookNavigation, ArticleContainer },
 	data() {
 		return {
 			config: [],
