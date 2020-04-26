@@ -1,8 +1,8 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import IndexPage from "./pages/IndexPage";
-import ArticleContent from "./pages/pages/ArticleContent";
-import BookArticle from "./pages/BookArticle";
+import IndexPage from "./components/article/IndexPage";
+import ArticleContent from "./components/article/ArticleContent";
+import ArticleContainer from "./components/article/ArticleContainer";
 
 Vue.use(VueRouter)
 
@@ -15,8 +15,8 @@ export default new VueRouter({
         },
         {
             name: 'pages',
-            path: '/pages',
-            component: BookArticle,
+            path: '/article',
+            component: ArticleContainer,
             children: [
                 {
                     name: 'json-page',

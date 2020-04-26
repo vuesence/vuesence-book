@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import VuesenceBook from "./VuesenceBook";
+import VuesenceBook from "./components/VuesenceBook";
 
 export default {
 	name: "app",

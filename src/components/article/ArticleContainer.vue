@@ -10,9 +10,11 @@
 </template>
 
 <script>
-    import NavigationItemContent from "../components/navigation/NavigationItemContent";
+    import NavigationItemContent from "../navigation/NavigationItemContent";
+    // import VuesenceBook from "../VuesenceBook";
+
     export default {
-        name: "BookArticle",
+        name: "ArticleContainer",
         components: {NavigationItemContent},
         data() {
             return {
@@ -107,6 +109,7 @@
         computed: {
             content() {
                 return this.$store.state.records[this.$route.params.id]
+                // return VuesenceBook.records[this.$route.params.id]
             }
         }
     }
