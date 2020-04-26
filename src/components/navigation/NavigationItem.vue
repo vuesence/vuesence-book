@@ -9,7 +9,7 @@
                 :to="item.to || {name: 'json-page', params: {id: item.id}}"
                 @click="onClick"
                 class="nav-link"
-                active-class="nav-link--active"
+                active-class1="nav-link--active"
                 :class="{'nav-link--active': item.isActive}"
             >
                 {{item.title}}
@@ -23,7 +23,7 @@
             v-if="hasChildren && isExpanded"
             class="nav-children"
         >
-            <ArticleNavigation
+            <NavigationItemContent
                 :tree="item.sections"
                 :level="level + 1"
             />
@@ -32,10 +32,10 @@
 </template>
 
 <script>
-    import ArticleNavigation from "./ArticleNavigation";
+    import NavigationItemContent from "./NavigationItemContent";
     export default {
-        name: "NavItem",
-        components: {ArticleNavigation},
+        name: "NavigationItem",
+        components: {NavigationItemContent},
         computed: {
             hasChildren() {
                 return this.item.sections && this.item.sections.length;
@@ -86,6 +86,10 @@
     }
 
     .nav-link--active {
+        font-weight: bold;
+    }
+
+    .main-navigation .router-link-active {
         font-weight: bold;
     }
 </style>

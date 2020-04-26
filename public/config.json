@@ -9,6 +9,7 @@
             },
             {
                 "title": "Architectural Patterns",
+                "id": "patterns",
                 "sections": [
                     {
                         "id": "2",
@@ -19,6 +20,7 @@
             },
             {
                 "title": "Design & User Experience",
+                "id": "design",
                 "sections": [
                     {
                         "title": "Designing Greate User Experience",

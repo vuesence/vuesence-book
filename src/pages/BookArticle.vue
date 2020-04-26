@@ -3,17 +3,17 @@
         <main ref="page" class="content">
             <router-view/>
         </main>
-        <aside class="affix">
-            <ArticleNavigation :tree="pageTree"/>
+        <aside class="article-navigation">
+            <NavigationItemContent :tree="pageTree"/>
         </aside>
     </div>
 </template>
 
 <script>
-    import ArticleNavigation from "../components/navigation/ArticleNavigation";
+    import NavigationItemContent from "../components/navigation/NavigationItemContent";
     export default {
-        name: "CustomPage",
-        components: {ArticleNavigation},
+        name: "BookArticle",
+        components: {NavigationItemContent},
         data() {
             return {
                 list: {},
@@ -123,7 +123,7 @@
     .content {
     }
 
-    .affix {
+    .article-navigation {
         position: sticky;
         top: 10px;
     }

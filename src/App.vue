@@ -1,44 +1,37 @@
 <template>
-  <div id="app" class="app">
-    <aside class="navigation">
-      <Navigation/>
-    </aside>
-    <main class="content">
-      <router-view/>
-    </main>
-  </div>
+	<div id="app" class="app">
+		<VuesenceBook></VuesenceBook>
+	</div>
+	
 </template>
 
 <script>
-import Navigation from "./components/navigation/Navigation";
+import VuesenceBook from "./VuesenceBook";
 
 export default {
-  name: 'app',
-  components: {Navigation},
-  created() {
-    this.$store.dispatch('loadConfig')
-  }
-}
+	name: "app",
+	components: { VuesenceBook },
+};
 </script>
 
 <style>
-  body {
-    margin: 0;
-  }
+body {
+	margin: 0;
+}
 
-  .app {
-    display: grid;
-    align-items: flex-start;
-    grid-template-columns: 200px auto;
-    grid-gap: 20px;
-    padding: 10px;
-  }
+/* .app {
+	display: grid;
+	align-items: flex-start;
+	grid-template-columns: 200px auto;
+	grid-gap: 20px;
+	padding: 10px;
+}
 
-  .navigation {
-    position: sticky;
-    top: 10px;
-  }
+.main-navigation {
+	position: sticky;
+	top: 10px;
+} */
 
-  .content {
-  }
+.content {
+}
 </style>

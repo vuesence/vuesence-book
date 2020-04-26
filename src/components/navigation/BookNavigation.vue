@@ -1,16 +1,16 @@
 <template>
-    <ArticleNavigation
+    <NavigationItemContent
         :tree="navigationTree"
     />
 </template>
 
 <script>
     import {mapState} from "vuex";
-    import ArticleNavigation from "./ArticleNavigation";
+    import NavigationItemContent from "./NavigationItemContent";
 
     export default {
-        name: "Navigation",
-        components: {ArticleNavigation},
+        name: "BookNavigation",
+        components: {NavigationItemContent},
         computed: {
             ...mapState({
                 navigationTree: state => state.config

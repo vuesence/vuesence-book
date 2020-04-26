@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "SomePage",
+        name: "ArticleContent",
         computed: {
             content() {
                 return this.$store.state.records[this.$route.params.id]

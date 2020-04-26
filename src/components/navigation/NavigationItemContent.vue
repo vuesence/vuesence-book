@@ -1,6 +1,6 @@
 <template>
     <ul class="nav">
-        <NavItem
+        <NavigationItem
             v-for="(item, index) in tree"
             :key="index"
             :item="item"
@@ -11,8 +11,8 @@
 
 <script>
     export default {
-        name: "ArticleNavigation",
-        components: {NavItem: () => import('./NavItem')},
+        name: "NavigationItemContent",
+        components: {NavigationItem: () => import('./NavigationItem')},
         props: {
             tree: Array,
             level: {
