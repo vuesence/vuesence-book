@@ -1,20 +1,24 @@
 <template>
 	<section data-component="vuesence-book" class="vsb">
-		<aside class="vsb-main-navigation">
-			<BookNavigation :config="config" />
+		<aside class="vsb-main-navigation">			
+			<NavigationItemContent
+				:tree='config.data'
+				:level=0
+			/>
 		</aside>
 		<ArticleContainer :articles="articles" :options="options"/>		
 	</section>
 </template>
 
 <script>
-import BookNavigation from "./BookNavigation";
+// import BookNavigation from "./BookNavigation";
+import NavigationItemContent from "./NavigationItemContent";
 import ArticleContainer from "./ArticleContainer";
 import {loadArticle} from "../vsb-utils";
 
 export default {
 	name: "VuesenceBook",
-	components: { BookNavigation, ArticleContainer },
+	components: { NavigationItemContent, ArticleContainer },
 	props: ['options'],
 	data() {
 		return {
@@ -31,11 +35,13 @@ export default {
 		xhr.open('GET', 'config.json', true)
 		xhr.onreadystatechange = () => {
 			if(xhr.readyState === 4) {
-				const tree = Array.from(JSON.parse(xhr.responseText).tree)
-
-				this.config =  tree;
+				this.config = JSON.parse(xhr.responseText);
 
 				const articles = {};
+
+				if (!this.$route.params.id){
+					this.$route.params.id = this.config.startArticle;					
+				}
 
 				const getRecords = (record) => {
 					
@@ -45,14 +51,7 @@ export default {
 							articles[record.id].content = record.content
 						} else {
 							if (record.url) {
-								// return article.url;
 								if (!this.options.lazyLoad) {
-
-									// fetch(record.url)
-									// 	.then((response) => response.text())
-									// 	.then((data) => {
-									// 		articles[record.id].content = data;
-									// 	});
 									loadArticle(record.url, (data) => {
 											articles[record.id].content = data;
 									});
@@ -69,7 +68,7 @@ export default {
 					}
 				}
 
-				tree.forEach(record => {
+				this.config.data.forEach(record => {
 					getRecords(record)
 				})
 
@@ -80,29 +79,3 @@ export default {
 	}
 };
 </script>
-
-<style>
-/* body {
-	margin: 0;
-} */
-
-/* >>> .nav-title {
-	font-size: 2em;;
-} */
-
-/* .vsb {
-	display: grid;
-	align-items: flex-start;
-	grid-template-columns: 200px auto;
-	grid-gap: 20px;
-	padding: 10px;
-}
-
-.vsb-main-navigation {
-	position: sticky;
-	top: 10px;
-} */
-
-/* .content {
-} */
-</style>

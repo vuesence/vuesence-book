@@ -1,6 +1,7 @@
 {
-    "tree": [{
-        "title": "Web Fundamentals",
+    "startArticle": "overview2",
+    "data": [{
+        "title": "Web Fundamentals",        
         "sections": [
             {
                 "id": "overview",

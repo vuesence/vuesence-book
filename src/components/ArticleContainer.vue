@@ -1,7 +1,7 @@
 <template>
     <section class="vsb-article-container">
         <main ref='articleContent' class="vsb-article-content-wrapper">
-            <ArticleContent :articles="articles" :article="article" :options="options" />            
+            <ArticleContent :article="article" :options="options" />            
         </main>
         <aside class="vsb-article-navigation">
             <NavigationItemContent :tree="articleNavTree" :articleNav="true" />
@@ -52,9 +52,6 @@
 
                 if(offsets.length > 0) {
 
-                    
-                    // console.log(this.articleNavList[offsets[0]].el.getBoundingClientRect().top);
-                    
                     if (this.articleNavList[offsets[0]].el.getBoundingClientRect().top < 100) {
                         Object.values(this.articleNavList).forEach((item) => {
                             item.isActive = false
@@ -69,7 +66,7 @@
                 }
             },
             async calculateHeadings() {
-                await this.$nextTick()
+                await this.$nextTick();
 
                 this.articleNavTree = []
                 this.articleNavList = []

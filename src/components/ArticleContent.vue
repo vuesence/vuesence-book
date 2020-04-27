@@ -7,37 +7,31 @@ import {loadArticle} from "../vsb-utils";
 
 export default {
     name: "ArticleContent",
-    props: ['articles', 'article', 'options'],
+    props: ['article', 'options'],
     data() {
         return {
             articleContent: ''
         }
     },
     methods: {
-        updateArticle() {
-            // const article = this.articles[this.$route.params.id];
-
+        updateArticleContent() {
             if(!this.$route.path || !this.article) {
                 return;
             }
 
             if (this.options.lazyLoad && this.article.url && !this.article.content) {                        
                 loadArticle(this.article.url, (data) => {
-                    // this.article.content = data;
-                    this.$set(this.article, 'content', data)
-                    this.articleContent = data;
+                    this.$set(this.article, 'content', data);
+                    this.articleContent = this.article.content;
                 });
             } else if (this.article.content) {
                 this.articleContent = this.article.content;
             }
         }
     },
-    mounted() {
-        this.updateArticle();
-    },
     watch: {
         article: function() {
-            this.updateArticle();
+            this.updateArticleContent();
         }
     }
 }
