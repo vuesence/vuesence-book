@@ -1,6 +1,10 @@
 <template>
 	<div id="app" class="app">
-		<VuesenceBook></VuesenceBook>
+		<VuesenceBook :options='{
+			"lazyLoad" : true,
+			"useBasicCSS": true,
+		}'>
+		</VuesenceBook>
 	</div>
 	
 </template>
@@ -21,5 +25,5 @@ body {
 </style>
 
 <style>
-    @import './custom.css';
+    /* @import './custom1.css'; */
 </style>

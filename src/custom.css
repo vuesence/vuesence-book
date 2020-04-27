@@ -1,5 +1,74 @@
 .vsb {
-	padding: 30px;
+	display: grid;
+	align-items: flex-start;
+	grid-template-columns: 200px auto;
+	grid-gap: 20px;
+	padding: 10px;
+}
+
+
+
+.vsb-article-container {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: auto 200px;
+    grid-gap: 20px;
+}
+
+.vsb-article-navigation {
+    position: sticky;
+    top: 10px;
+}
+
+
+
+
+.vsb-main-navigation {
+	position: sticky;
+	top: 10px;
+}
+
+
+.vsb-nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+.vsb-nav-section {
+    padding-left: 14px;
+}
+
+.vsb-nav-title {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 6px;
+    cursor: pointer;
+}
+
+.vsb-nav-toggle {
+    /* height: 20px; */
+    /* width: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* background: #efefef; */
+}
+
+.vsb-nav-item {
+    margin-top: 10px;
+}
+
+.vsb-nav-link--active {
+    /* font-weight: bold; */
+}
+
+
+
+.vsb-main-navigation .router-link-active {
+    /* font-weight: bold; */
 }
 
 .vsb .vsb-main-nav {
@@ -18,7 +87,11 @@
 }
 
 .vsb .vsb-nav-item {
-    margin-top: 10px;
+    margin-top: 5px;
+}
+
+.vsb .vsb-article-content {
+
 }
 
 
@@ -28,4 +101,62 @@
 
 html {
     scroll-behavior: smooth;
-  }
+    font-size: 14px;
+}
+body {
+    /* padding-top: 20px; */
+    color: #24292e;
+    /* font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol; */
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  
+}
+
+
+.vsb-main-navigation .vsb-nav-item--0 > .vsb-nav-title {
+    color: #393939;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 2em;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+:not(.vsb-nav-item--0) > .vsb-nav-title a {
+    border: none;
+    color: #717171;
+    /* display: block; */
+    font-size: 1em;
+    padding: 4px 0;
+    transition: color .3s;
+    text-decoration: none;
+}
+
+.vsb-main-navigation :not(.vsb-nav-item--0) > .vsb-nav-title a.router-link-active, 
+.vsb-main-navigation :not(.vsb-nav-item--0) > .vsb-nav-title a:hover, 
+.vsb-main-navigation :not(.vsb-nav-item--0) > .vsb-nav-title a:focus,
+:not(.vsb-nav-item--0) > a:hover,
+:not(.vsb-nav-item--0) > a.vsb-nav-link--active {
+    color: #2e8555;
+}
+
+.vsb-nav-toggle .arrow {
+    float: right;
+    margin-right: 8px;
+    margin-top: -4px;
+    transform: rotate(90deg);
+    transition: transform .2s linear;
+}
+.vsb-nav-toggle.vsb-nav-toggle--active .arrow {
+    transform: rotate(180deg);
+}
+
+
+.vsb-article-navigation .vsb-nav-list.nav-level--1 {
+    border-left: 1px solid #e0e0e0;
+    padding: 10px 0 20px 15px;
+}
+
+.vsb-article-content {
+    font-size: 1.1em;
+    margin-top: 30px;
+}

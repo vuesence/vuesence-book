@@ -1,7 +1,7 @@
 <template>
     <section class="vsb-article-container">
         <main ref='articleContent' class="vsb-article-content-wrapper">
-            <ArticleContent :articles="articles" />            
+            <ArticleContent :articles="articles" :article="article" :options="options" />            
         </main>
         <aside class="vsb-article-navigation">
             <NavigationItemContent :tree="articleNavTree" :articleNav="true" />
@@ -12,15 +12,16 @@
 <script>
     import NavigationItemContent from "./NavigationItemContent";
     import ArticleContent from "./ArticleContent";
-    import VsbEventBus from "../vsb-event-bus";
+    import {VsbEventBus} from "../vsb-utils";
     // import VuesenceBook from "../VuesenceBook";
 
     export default {
         name: "ArticleContainer",
         components: {NavigationItemContent, ArticleContent},
-        props: ['articles'],
+        props: ['articles', 'options'],
         data() {
             return {
+                article: {},
                 articleNavList: {},
                 articleNavTree: []
             }
@@ -29,11 +30,13 @@
             window.addEventListener('scroll', this.handleScroll)
             window.addEventListener('resize', this.handleScroll)
 
+            this.article = this.articles[this.$route.params.id];
+            this.calculateHeadings();
+
             VsbEventBus.$on("scrollTo", (item) => {
-                console.log(item.topOffset);
-                // this.$el.scrollTop =item.topOffset;
-                window.scrollTo(0, item.topOffset - 50);
+                window.scrollTo(0, item.offsetTop - 70);
             })
+
         },
         beforeDestroy() {
             window.removeEventListener('scroll', this.handleScroll)
@@ -49,19 +52,19 @@
 
                 if(offsets.length > 0) {
 
-                    console.log(this.articleNavList[offsets[0]].title);
-                    console.log(this.articleNavList[offsets[0]].el.getBoundingClientRect().top);
                     
+                    // console.log(this.articleNavList[offsets[0]].el.getBoundingClientRect().top);
                     
-                    if (this.articleNavList[offsets[0]].el.getBoundingClientRect().top < 100
-                        // || offsets.length == 1
-                        ) {
+                    if (this.articleNavList[offsets[0]].el.getBoundingClientRect().top < 100) {
                         Object.values(this.articleNavList).forEach((item) => {
                             item.isActive = false
                         })
                         this.articleNavList[offsets[0]].isActive = true;
-                    } else {
-                        // this.articleNavList[offsets[1]].isActive = true;
+                    } else if (offsets.length == 1) {
+                        Object.values(this.articleNavList).forEach((item) => {
+                            item.isActive = false
+                        })
+                        this.articleNavList[offsets[0]].isActive = true;
                     }
                 }
             },
@@ -82,7 +85,7 @@
                         title: domItem.innerHTML,
                         el: domItem,
                         sections: [],
-                        topOffset: domItem.offsetTop,
+                        offsetTop: domItem.offsetTop,
                         isActive: false,
                     }
 
@@ -117,33 +120,23 @@
             }
         },
         watch: {
-            content: {
+            article: {
                 async handler() {
+                    // console.log("watcher article");
                     this.calculateHeadings();
                 }
+            },            
+            articles: {
+                deep: true,
+                async handler() {
+                    // console.log("watcher articles");                    
+                    this.article = this.articles[this.$route.params.id];                    
+                    this.calculateHeadings();                    
+                }
             },
-        },
-        computed: {
-            content() {
-                return this.articles[this.$route.params.id]
-            }
+            '$route.path': function() {
+                this.article = this.articles[this.$route.params.id];
+            },
         }
     }
 </script>
-
-<style>
-    .vsb-article-container {
-        display: grid;
-        align-items: flex-start;
-        grid-template-columns: auto 200px;
-        grid-gap: 20px;
-    }
-
-    /* .content {
-    } */
-
-    .vsb-article-navigation {
-        position: sticky;
-        top: 10px;
-    }
-</style>

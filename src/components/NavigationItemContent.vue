@@ -27,11 +27,3 @@
         },
     }
 </script>
-
-<style>
-    .vsb-nav-list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-</style>
