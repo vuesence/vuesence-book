@@ -1,16 +1,19 @@
 .vsb {
-	
+    --header-height: 4rem;	
 }
+
+
 
 .vsb-header {
     /* height: 3rem;     */
     padding: .7rem 1.5rem;
     padding-left: 4rem;
     line-height: 2.2rem;
-    height: 3.6rem;
+    height: var(--header-height);
     box-sizing: border-box;
     border-bottom: 1px solid #eaecef;
     position: fixed;
+    background-color: white;
     top: 0;
     left: 0;
     z-index: 20;
@@ -18,7 +21,7 @@
 }
 .vsb-sidebar-button {
     cursor: pointer;
-    /* display: none; */
+    display: none;
     width: 1.25rem;
     height: 1.25rem;
     position: absolute;
@@ -49,20 +52,27 @@
     position: fixed;
     z-index: 10;
     margin: 0;
-    top: 4rem;
+    top: var(--header-height);
     left: 0;
     bottom: 0;
     box-sizing: border-box;
     border-right: 1px solid #eaecef;
     overflow-y: auto;
+    padding: 1rem;
 }
 
 
-.vsb-article-container {
-    /* display: grid; */
+/* .vsb-article-container {
     padding-left: 18rem;
     display: flex;
     padding-top: 4rem;
+} */
+
+.vsb-container {
+    /* display: grid; */
+    /* padding-left: 18rem; */
+    display: flex;
+    padding-top: var(--header-height);
     /* align-items: flex-start; */
     /* grid-template-columns: auto 200px; */
     /* grid-gap: 20px; */
@@ -71,18 +81,44 @@
 .vsb-article-content-wrapper {
     flex-grow: 1;
     padding: 0 1rem;
+    padding-left: 20rem;
 }
 
 .vsb-article-navigation {
     position: sticky;
-    top: 4rem;
+    top: var(--header-height);
     min-width: 14rem;
     display: block;
-    max-height: 100vh;
+    max-height: calc(100vh - 4rem);
 }
 
 
 
+
+@media (max-width: 719px) {
+    .vsb-header {
+        padding-left: 4rem;
+    }
+    .vsb-sidebar {
+        top: 0;
+        padding-top: 2rem;
+        transform: translateX(-100%);
+        transition: transform .2s ease;
+    }
+    .sidebar-open .vsb-sidebar {
+        transform: translateX(0);
+    }
+    
+    .vsb-article-content-wrapper {
+        padding: 2rem;
+    }
+    .vsb-article-navigation {
+        display: none;
+    }
+    .vsb-sidebar-button {
+        display: block;
+    }
+}
 
 
 .vsb-nav-list {
@@ -214,5 +250,5 @@ body {
 
 .vsb-article-content {
     font-size: 1.1em;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }

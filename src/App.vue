@@ -1,8 +1,9 @@
 <template>
 	<div id="app" class="app">
-		<VuesenceBook :options='{
+		<VuesenceBook ref="v" :options='{
 			"lazyLoad" : true,
 			"useBasicCSS": true,
+			"showHeader": true,
 		}'>
 		</VuesenceBook>
 	</div>
@@ -15,6 +16,12 @@ import VuesenceBook from "./components/VuesenceBook";
 export default {
 	name: "app",
 	components: { VuesenceBook },
+	// mounted() {
+	// 	setInterval(() => {
+	// 		console.log("1");						
+	// 		this.$refs.v.toggleSidebar();
+	// 	}, 3000);
+	// }
 };
 </script>
 

@@ -109,7 +109,7 @@ export default {
         font-weight: bold;
     }
 
-    .vsb-sidebar .router-link-active {
+    .vsb-main-navigation .router-link-active {
         font-weight: bold;
     } */
 </style>
