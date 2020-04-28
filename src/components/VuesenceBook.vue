@@ -1,13 +1,25 @@
 <template>
-	<section data-component="vuesence-book" class="vsb">
-		<aside class="vsb-main-navigation">			
-			<NavigationItemContent
-				:tree='config.data'
-				:level=0
-			/>
-		</aside>
-		<ArticleContainer :articles="articles" :options="options"/>		
-	</section>
+	<div>
+		<header class="vsb-header">
+			<div class="vsb-sidebar-button">
+				<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
+					<path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
+				</svg>
+			</div>
+			<div class="vsb-header-title">
+				Vuesence Book
+			</div>
+		</header>
+		<section data-component="vuesence-book" class="vsb">
+			<aside class="vsb-sidebar">			
+				<NavigationItemContent
+					:tree='config.data'
+					:level=0
+				/>
+			</aside>
+			<ArticleContainer :articles="articles" :options="options"/>		
+		</section>
+	</div>
 </template>
 
 <script>
@@ -28,9 +40,9 @@ export default {
 	},
 	created() {
 
-		if (this.options.useBasicCSS) {
-			require('../custom.css');
-		}
+		// if (this.options.useBasicCSS) {
+		// 	require('../custom.css');
+		// }
 		const xhr = new XMLHttpRequest()
 		xhr.open('GET', 'config.json', true)
 		xhr.onreadystatechange = () => {

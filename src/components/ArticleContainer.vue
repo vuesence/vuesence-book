@@ -1,12 +1,12 @@
 <template>
-    <section class="vsb-article-container">
-        <main ref='articleContent' class="vsb-article-content-wrapper">
+    <main class="vsb-article-container">
+        <div ref='articleContentWrapper' class="vsb-article-content-wrapper">
             <ArticleContent :article="article" :options="options" />            
-        </main>
+        </div>
         <aside class="vsb-article-navigation">
             <NavigationItemContent :tree="articleNavTree" :articleNav="true" />
         </aside>
-    </section>
+    </main>
 </template>
 
 <script>
@@ -71,7 +71,7 @@
                 this.articleNavTree = []
                 this.articleNavList = []
 
-                const headings = Array.from(this.$refs.articleContent.querySelectorAll('h1,h2,h3,h4,h5,h6'))
+                const headings = Array.from(this.$refs.articleContentWrapper.querySelectorAll('h1,h2,h3,h4,h5,h6'))
 
                 const buildItem = (items, index) => {
                     const domItem = headings[index]
@@ -101,7 +101,7 @@
                 }
 
                 const DOMHeadings = Array.from(
-                    this.$refs.articleContent.querySelectorAll('h1,h2,h3,h4,h5,h6')
+                    this.$refs.articleContentWrapper.querySelectorAll('h1,h2,h3,h4,h5,h6')
                 ).map(heading => +heading.tagName.substr(1, 1))
 
                 const min = Math.min(...DOMHeadings)

@@ -1,32 +1,88 @@
 .vsb {
-	display: grid;
-	align-items: flex-start;
-	grid-template-columns: 200px auto;
-	grid-gap: 20px;
-	padding: 10px;
+	
+}
+
+.vsb-header {
+    /* height: 3rem;     */
+    padding: .7rem 1.5rem;
+    padding-left: 4rem;
+    line-height: 2.2rem;
+    height: 3.6rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eaecef;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    right: 0;
+}
+.vsb-sidebar-button {
+    cursor: pointer;
+    /* display: none; */
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    padding: .6rem;
+    top: .6rem;
+    left: 1rem;
+}
+
+.vsb-sidebar-button .icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.vsb-header-title {
+    margin: auto;
+    display: inline-block;
+    font-weight: bold;
 }
 
 
 
+.vsb-sidebar {
+	/* position: sticky;
+    top: 10px; */
+    background-color: #fff;
+    width: 18rem;
+    position: fixed;
+    z-index: 10;
+    margin: 0;
+    top: 4rem;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border-right: 1px solid #eaecef;
+    overflow-y: auto;
+}
+
+
 .vsb-article-container {
-    display: grid;
-    align-items: flex-start;
-    grid-template-columns: auto 200px;
-    grid-gap: 20px;
+    /* display: grid; */
+    padding-left: 18rem;
+    display: flex;
+    padding-top: 4rem;
+    /* align-items: flex-start; */
+    /* grid-template-columns: auto 200px; */
+    /* grid-gap: 20px; */
+}
+
+.vsb-article-content-wrapper {
+    flex-grow: 1;
+    padding: 0 1rem;
 }
 
 .vsb-article-navigation {
     position: sticky;
-    top: 10px;
+    top: 4rem;
+    min-width: 14rem;
+    display: block;
+    max-height: 100vh;
 }
 
 
 
-
-.vsb-main-navigation {
-	position: sticky;
-	top: 10px;
-}
 
 
 .vsb-nav-list {
@@ -67,7 +123,7 @@
 
 
 
-.vsb-main-navigation .router-link-active {
+.vsb-sidebar .router-link-active {
     /* font-weight: bold; */
 }
 
@@ -112,7 +168,7 @@ body {
 }
 
 
-.vsb-main-navigation .vsb-nav-item--0 > .vsb-nav-title {
+.vsb-sidebar .vsb-nav-item--0 > .vsb-nav-title {
     color: #393939;
     font-size: 1.2em;
     font-weight: bold;
@@ -131,9 +187,9 @@ body {
     text-decoration: none;
 }
 
-.vsb-main-navigation :not(.vsb-nav-item--0) > .vsb-nav-title a.router-link-active, 
-.vsb-main-navigation :not(.vsb-nav-item--0) > .vsb-nav-title a:hover, 
-.vsb-main-navigation :not(.vsb-nav-item--0) > .vsb-nav-title a:focus,
+.vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a.router-link-active, 
+.vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a:hover, 
+.vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a:focus,
 :not(.vsb-nav-item--0) > a:hover,
 :not(.vsb-nav-item--0) > a.vsb-nav-link--active {
     color: #2e8555;
