@@ -6,9 +6,7 @@
 					<path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
 				</svg>
 			</div>
-			<div class="vsb-header-title">
-				Vuesence Book
-			</div>
+			<div class="vsb-header-title"></div>
 		</header>
 		<section data-component="vuesence-book" class="vsb-container">
 
@@ -109,12 +107,29 @@ export default {
 
 	mounted() {
 		if (!this.options.showHeader) {
-			this.$refs.vsb.querySelector("header").style.display = "none";
-			this.$refs.vsb.style.setProperty('--header-height', '0');
+			// this.$refs.vsb.querySelector("header").style.display = "none";
+			// this.$refs.vsb.style.setProperty('--header-height', '0');
+			this.$refs.vsb.style.setProperty('--header-display', 'none');
 		}
+		if (this.options.hideHeaderInDesktopView || !this.options.showHeader) {
+			// this.$refs.vsb.querySelector("header").style.display = "none";
+			this.$refs.vsb.style.setProperty('--header-desktop-height', '0');
+			this.$refs.vsb.style.setProperty('--header-desktop-display', 'none');
+		}
+		if (this.options.hideRootInArticleNavigation) {
+			// this.$refs.vsb.style.setProperty('--article-navigation-root', 'none');
+		}
+
+		this.$refs.vsb.querySelector(".vsb-header-title").textContent = this.options.headerTitle;
 		
 		window.addEventListener('scroll', this.handleScroll)
 		window.addEventListener('resize', this.handleScroll)
+
+		window.addEventListener('click', (event) => {
+			if (event.target.closest(".vsb-article-content-wrapper")) {
+				this.closeSidebar();
+			}
+		});
 
 		this.article = this.articles[this.$route.params.id];
 		this.calculateHeadings();
@@ -132,9 +147,14 @@ export default {
 	methods: {
 		toggleSidebar() {
 			this.$refs.vsb.classList.toggle("sidebar-open");
-			// console.log(2);
-			
 		},
+		openSidebar() {
+			this.$refs.vsb.classList.add("sidebar-open");
+		},
+		closeSidebar() {
+			this.$refs.vsb.classList.remove("sidebar-open");
+		},
+
 		handleScroll() {
 			const offsets = 
 				this.articleNavList

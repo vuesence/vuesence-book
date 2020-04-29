@@ -1,5 +1,9 @@
 .vsb {
-    --header-height: 4rem;	
+    --header-height: 4rem;
+    --header-desktop-height: 4rem;
+    --header-display: "initial";
+    --header-desktop-display: "initial";
+    --article-navigation-root: "initial";
 }
 
 
@@ -8,8 +12,11 @@
     /* height: 3rem;     */
     padding: .7rem 1.5rem;
     padding-left: 4rem;
-    line-height: 2.2rem;
+    line-height: 2.4rem;
     height: var(--header-height);
+    /* height: var(--header-desktop-height); */
+    display: var(--header-display);
+    display: var(--header-desktop-display);
     box-sizing: border-box;
     border-bottom: 1px solid #eaecef;
     position: fixed;
@@ -40,6 +47,7 @@
     margin: auto;
     display: inline-block;
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 
@@ -53,6 +61,7 @@
     z-index: 10;
     margin: 0;
     top: var(--header-height);
+    top: var(--header-desktop-height);
     left: 0;
     bottom: 0;
     box-sizing: border-box;
@@ -72,7 +81,7 @@
     /* display: grid; */
     /* padding-left: 18rem; */
     display: flex;
-    padding-top: var(--header-height);
+    padding-top: var(--header-desktop-height);
     /* align-items: flex-start; */
     /* grid-template-columns: auto 200px; */
     /* grid-gap: 20px; */
@@ -87,21 +96,28 @@
 .vsb-article-navigation {
     position: sticky;
     top: var(--header-height);
+    top: var(--header-desktop-height);
     min-width: 14rem;
     display: block;
     max-height: calc(100vh - 4rem);
+    
 }
 
+.vsb-article-navigation .vsb-nav-item--1 > .vsb-nav-title > a {
+    display: var(--article-navigation-root);
+}
 
 
 
 @media (max-width: 719px) {
     .vsb-header {
         padding-left: 4rem;
+        height: var(--header-height);
+        display: var(--header-display);
     }
     .vsb-sidebar {
         top: 0;
-        padding-top: 2rem;
+        padding-top: 5rem;
         transform: translateX(-100%);
         transition: transform .2s ease;
     }
@@ -110,7 +126,7 @@
     }
     
     .vsb-article-content-wrapper {
-        padding: 2rem;
+        padding: 0.5rem 2rem;
     }
     .vsb-article-navigation {
         display: none;
@@ -135,7 +151,7 @@
 .vsb-nav-title {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 6px;
+    /* grid-gap: 6px; */
     cursor: pointer;
 }
 
@@ -144,7 +160,7 @@
     /* width: 20px; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     cursor: pointer;
     /* background: #efefef; */
 }
