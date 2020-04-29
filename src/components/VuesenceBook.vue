@@ -1,10 +1,21 @@
 <template>
 	<div ref="vsb" class="vsb">
 		<header class="vsb-header">
-			<div class="vsb-sidebar-button" @click="toggleSidebar">
-				<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
+			<div class="vsb-sidebar-button nav-icon" @click="toggleSidebar">
+				<!-- <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
 					<path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
-				</svg>
+				</svg> -->
+				<!-- <div id="nav-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>   -->
+				<!-- <div class="nav-icon"> -->
+					<div></div>
+				<!-- </div> -->
 			</div>
 			<div class="vsb-header-title"></div>
 		</header>
@@ -54,9 +65,9 @@ export default {
 	},
 	created() {
 
-		// if (this.options.useBasicCSS) {
-		// 	require('../custom.css');
-		// }
+		if (this.options.useDefaultCSS) {
+			require('../default.css');
+		}
 		const xhr = new XMLHttpRequest()
 		xhr.open('GET', 'config.json', true)
 		xhr.onreadystatechange = () => {
@@ -77,7 +88,7 @@ export default {
 							articles[record.id].content = record.content
 						} else {
 							if (record.url) {
-								if (!this.options.lazyLoad) {
+								if (!this.options.articlesLazyLoad) {
 									loadArticle(record.url, (data) => {
 											articles[record.id].content = data;
 									});
@@ -125,7 +136,7 @@ export default {
 		window.addEventListener('scroll', this.handleScroll)
 		window.addEventListener('resize', this.handleScroll)
 
-		window.addEventListener('click', (event) => {
+		this.$refs.vsb.addEventListener('click', (event) => {
 			if (event.target.closest(".vsb-article-content-wrapper")) {
 				this.closeSidebar();
 			}

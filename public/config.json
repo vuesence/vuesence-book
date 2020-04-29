@@ -55,12 +55,12 @@
         "title": "TOC2",
         "sections": [
             {
-                "id": "overview",
+                "id": "overview2",
                 "title": "Intro 2",
                 "url": "pages/intro.md"
             },
             {
-                "id": "headings",
+                "id": "headings2",
                 "title": "Description2",
                 "url": "pages/desc.html"
             }

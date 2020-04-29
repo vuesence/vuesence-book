@@ -4,4 +4,14 @@ This article is loaded over the internet on request and generated from markdown 
 
 ## Secondary heading
 
-Some more text
+Code block example
+
+
+```
+├─ pages
+   ├─ desc.html
+   └─ intro.md
+
+```
+
+All `html` and `md` resources must be put in the `pages` directory

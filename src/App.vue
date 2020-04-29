@@ -2,9 +2,9 @@
 	<div id="app" class="app">
 		<VuesenceBook ref="v" :options='{
 			// loads articles on request
-			"lazyLoad" : true,
+			"articlesLazyLoad" : true,
 			// dont use basic CSS
-			"useBasicCSS": true,
+			"useDefaultCSS": true,
 			// show header. if false then sidebar openning in the mobile view
 			// should be done programmatically
 			"showHeader": true,
@@ -35,12 +35,8 @@ export default {
 };
 </script>
 
-<style>
-body {
-	margin: 0;
-}
-</style>
-
-<style>
-    /* @import './custom1.css'; */
+<style>	
+	/* @import './vuepress-style.css'; */
+	@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+	@import './google-style.css';
 </style>
