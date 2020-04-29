@@ -14,6 +14,8 @@
 			"hideRootInArticleNavigation": false,
 			// header title
 			"headerTitle": "Vuesence.Book",
+			// whether VuesenceBook should use own Router - only if the containing app does not use any			
+			"useOwnRouter": true,
 		}'>
 		</VuesenceBook>
 	</div>
@@ -36,7 +38,7 @@ export default {
 </script>
 
 <style>	
-	/* @import './vuepress-style.css'; */
-	@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
-	@import './google-style.css';
+	@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');	
+	@import './vuepress-style.css';	
+	/* @import './google-style.css'; */
 </style>

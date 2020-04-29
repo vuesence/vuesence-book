@@ -2,20 +2,7 @@
 	<div ref="vsb" class="vsb">
 		<header class="vsb-header">
 			<div class="vsb-sidebar-button nav-icon" @click="toggleSidebar">
-				<!-- <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
-					<path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
-				</svg> -->
-				<!-- <div id="nav-icon">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>   -->
-				<!-- <div class="nav-icon"> -->
-					<div></div>
-				<!-- </div> -->
+				<div></div>
 			</div>
 			<div class="vsb-header-title"></div>
 		</header>
@@ -68,6 +55,7 @@ export default {
 		if (this.options.useDefaultCSS) {
 			require('../default.css');
 		}
+
 		const xhr = new XMLHttpRequest()
 		xhr.open('GET', 'config.json', true)
 		xhr.onreadystatechange = () => {

@@ -14,7 +14,7 @@
 			<div
 				v-if="hasChildren"
 				class="vsb-nav-toggle"
-				@clicsectionsk="isExpanded = !isExpanded"
+				@click="isExpanded = !isExpanded"
                 :class="{ 'vsb-nav-toggle--active': isExpanded }"
 			>
 				<!-- {{ isExpanded ? "-" : "+" }} -->

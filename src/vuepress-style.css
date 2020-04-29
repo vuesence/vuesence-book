@@ -18,6 +18,8 @@
 .vsb :not(.vsb-nav-item--0) > a:hover,
 .vsb :not(.vsb-nav-item--0) > a.vsb-nav-link--active {
     color: #3eaf7c;
-    font-weight: 600;
+}
+.vsb :not(.vsb-nav-item--0) > a.vsb-nav-link--active {
+    font-weight: 500;
 }
 
