@@ -15,7 +15,7 @@
 			// header title
 			"headerTitle": "Vuesence.Book",
 			// whether VuesenceBook should use own Router - only if the containing app does not use any			
-			"useOwnRouter": true,
+			"useRouter": true,
 		}'>
 		</VuesenceBook>
 	</div>

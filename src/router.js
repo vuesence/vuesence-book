@@ -7,7 +7,6 @@ export default new VueRouter({
     routes: [
         {
             path: '/help',
-            // component: ArticleContainer,
             children: [
                 {
                     name: 'article',

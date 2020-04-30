@@ -1,7 +1,7 @@
 <template>
 	<li class="vsb-nav-item" :class="`vsb-nav-item--${level}`">
 		<div class="vsb-nav-title">
-			<router-link
+			<!-- <router-link
 				:is="item.to || !item.sections ? 'router-link' : 'div'"
 				:to="item.to || { name: 'article', params: { id: item.id } }"
 				@click.native="handleScrollToSection"
@@ -10,17 +10,34 @@
 				:class="{ 'vsb-nav-link--active': item.isActive }"
 			>
 				{{ item.title }}
-			</router-link>
+			</router-link> -->
+
+			<a
+				v-if="item.to || !item.sections"
+				@click="navigateTo()"
+				class="vsb-nav-link"
+				:class="{ 'vsb-nav-link--active': item.isActive }"
+				rel="link"
+			>
+				{{ item.title }}
+			</a>
+			<div
+				v-else
+				@click="handleExpand"
+				class="vsb-nav-link"
+				:class="{ 'vsb-nav-link--active': item.isActive }"
+			>
+				{{ item.title }}
+			</div>
+
 			<div
 				v-if="hasChildren"
 				class="vsb-nav-toggle"
 				@click="isExpanded = !isExpanded"
-                :class="{ 'vsb-nav-toggle--active': isExpanded }"
+				:class="{ 'vsb-nav-toggle--active': isExpanded }"
 			>
 				<!-- {{ isExpanded ? "-" : "+" }} -->
-                <span 
-					@click="handleExpand"
-					class="arrow">
+				<span @click="handleExpand" class="arrow">
 					<svg width="24" height="24" viewBox="0 0 24 24">
 						<path
 							fill="#565656"
@@ -30,7 +47,6 @@
 					</svg>
 				</span>
 			</div>
-			
 		</div>
 
 		<div v-if="hasChildren && isExpanded" class="vsb-nav-section">
@@ -45,7 +61,7 @@
 
 <script>
 import NavigationItemContent from "./NavigationItemContent";
-import {VsbEventBus} from "../vsb-utils";
+import { VsbEventBus } from "../vsb-utils";
 
 export default {
 	name: "NavigationItem",
@@ -69,8 +85,13 @@ export default {
 				this.isExpanded = !this.isExpanded;
 			}
 		},
-		handleScrollToSection() {
-			VsbEventBus.$emit("scrollTo", this.item);
+		navigateTo() {			
+			if (this.$el.closest(".vsb-article-navigation")) {
+				VsbEventBus.$emit("scrollTo", this.item);
+			} else {				
+				VsbEventBus.$emit("navigateTo", this.item);
+				// this.$refs.link.classList.add("");
+			}
 		},
 	},
 	data() {
@@ -80,38 +101,3 @@ export default {
 	},
 };
 </script>
-
-<style>
-/* .vsb-nav-section {
-        padding-left: 14px;
-    }
-
-    .vsb-nav-title {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 6px;
-        cursor: pointer;
-    }
-
-    .vsb-nav-toggle {
-        height: 20px;
-        width: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        background: #efefef;
-    }
-
-    .vsb-nav-item {
-        margin-top: 10px;
-    }
-
-    .vsb-nav-link--active {
-        font-weight: bold;
-    }
-
-    .vsb-main-navigation .router-link-active {
-        font-weight: bold;
-    } */
-</style>

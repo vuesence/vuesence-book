@@ -15,7 +15,7 @@ export default {
     },
     methods: {
         updateArticleContent() {
-            if(!this.$route.path || !this.article) {
+            if(!this.article) {
                 return;
             }
 

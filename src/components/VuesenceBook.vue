@@ -64,10 +64,6 @@ export default {
 
 				const articles = {};
 
-				if (!this.$route.params.id){
-					this.$route.params.id = this.config.startArticle;					
-				}
-
 				const getRecords = (record) => {
 					
 					if(record.content || record.url) {
@@ -82,6 +78,7 @@ export default {
 									});
 								}
 								articles[record.id].url = record.url;
+								articles[record.id].item = record;
 							}
 						}
 					}
@@ -98,6 +95,12 @@ export default {
 				})
 
 				this.articles = articles;
+
+				if (this.options.useRouter && this.$route.params.id && articles.hasOwnProperty(this.$route.params.id)){
+					this.article = this.articles[this.$route.params.id];					
+				} else {
+					this.article = this.articles[this.config.startArticle];					
+				}
 			}
 		}
 		xhr.send();
@@ -106,23 +109,20 @@ export default {
 
 	mounted() {
 		if (!this.options.showHeader) {
-			// this.$refs.vsb.querySelector("header").style.display = "none";
-			// this.$refs.vsb.style.setProperty('--header-height', '0');
 			this.$refs.vsb.style.setProperty('--header-display', 'none');
 		}
 		if (this.options.hideHeaderInDesktopView || !this.options.showHeader) {
-			// this.$refs.vsb.querySelector("header").style.display = "none";
 			this.$refs.vsb.style.setProperty('--header-desktop-height', '0');
 			this.$refs.vsb.style.setProperty('--header-desktop-display', 'none');
 		}
 		if (this.options.hideRootInArticleNavigation) {
-			// this.$refs.vsb.style.setProperty('--article-navigation-root', 'none');
+			this.$refs.vsb.style.setProperty('--article-navigation-root', 'none');
 		}
 
 		this.$refs.vsb.querySelector(".vsb-header-title").textContent = this.options.headerTitle;
 		
-		window.addEventListener('scroll', this.handleScroll)
-		window.addEventListener('resize', this.handleScroll)
+		window.addEventListener('scroll', this.trackScroll)
+		window.addEventListener('resize', this.trackScroll)
 
 		this.$refs.vsb.addEventListener('click', (event) => {
 			if (event.target.closest(".vsb-article-content-wrapper")) {
@@ -130,19 +130,28 @@ export default {
 			}
 		});
 
-		this.article = this.articles[this.$route.params.id];
-		this.calculateHeadings();
+		// this.article = this.articles[this.$route.params.id];
+		// this.calculateHeadings();
 
 		VsbEventBus.$on("scrollTo", (item) => {
 			this.$refs.vsb.classList.remove("sidebar-open");
 			window.scrollTo(0, item.offsetTop - 70);
 		})
 
+		VsbEventBus.$on("navigateTo", (item) => {
+			this.$refs.vsb.classList.remove("sidebar-open");
+			this.article = this.articles[item.id];
+			if (this.options.useRouter) {
+				this.$router.push(item.id);
+			}
+		})
+
 	},
 	beforeDestroy() {
-		window.removeEventListener('scroll', this.handleScroll)
-		window.removeEventListener('resize', this.handleScroll)
+		window.removeEventListener('scroll', this.trackScroll)
+		window.removeEventListener('resize', this.trackScroll)
 	},
+
 	methods: {
 		toggleSidebar() {
 			this.$refs.vsb.classList.toggle("sidebar-open");
@@ -154,7 +163,7 @@ export default {
 			this.$refs.vsb.classList.remove("sidebar-open");
 		},
 
-		handleScroll() {
+		trackScroll() {
 			const offsets = 
 				this.articleNavList
 				.map((item) => item.el.getBoundingClientRect().top)
@@ -224,7 +233,7 @@ export default {
 			})
 
 			await this.$nextTick
-			this.handleScroll()
+			this.trackScroll()
 		}
 	},
 	watch: {
@@ -234,17 +243,17 @@ export default {
 				this.calculateHeadings();
 			}
 		},            
-		articles: {
-			deep: true,
-			async handler() {
-				// console.log("watcher articles");                    
-				this.article = this.articles[this.$route.params.id];                    
-				this.calculateHeadings();                    
-			}
-		},
-		'$route.path': function() {
-			this.article = this.articles[this.$route.params.id];
-		},
+		// articles: {
+		// 	deep: true,
+		// 	async handler() {
+		// 		// console.log("watcher articles");                    
+		// 		this.article = this.articles[this.$route.params.id];                    
+		// 		this.calculateHeadings();                    
+		// 	}
+		// },
+		// '$route.path': function() {
+		// 	this.article = this.articles[this.$route.params.id];
+		// },
 	}
 
 
