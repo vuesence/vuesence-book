@@ -1,0 +1,80 @@
+{
+  "name": "demo",
+  "description": "Help/documentation system",
+  "version": "0.3.1",
+  "private": false,
+  "main": "./dist/book.common.js",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build-bundle1": "vue-cli-service build --target lib --name book ./src/components/VuesenceBook.vue",
+    "build-bundle": "vue-cli-service build --target lib --name book ./src/index.js"
+  },
+  "dependencies": {
+    "@vuesence/book": "^0.3.1",
+    "marked": "^1.0.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": 0
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "README.md"
+  ],
+  "homepage": "https://github.com/sodatea/get-current-script#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altrusl/vuesence-book.git"
+  },
+  "author": {
+    "name": "Ruslan Makarov",
+    "url": "https://altrusl.github.io/cv"
+  },
+  "keywords": [
+    "vue",
+    "documentation",
+    "help system"
+  ]
+}
