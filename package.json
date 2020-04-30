@@ -1,27 +1,61 @@
 {
-  "name": "book",
-  "version": "0.3.0",
-  "private": true,
+  "name": "@vuesence/book",
+  "description": "Help/documentation system",
+  "version": "0.3.1",
+  "private": false,
+  "main1": "./dist/index.js",
+  "main": "dist/vuesence-book.umd.js",
+  "module": "dist/vuesence-book.esm.js",
+  "unpkg": "dist/vuesence-book.min.js",
+  "browser": {
+    "./sfc": "src/components/VuesenceBook.vue"
+  },
+  "homepage": "https://github.com/sodatea/get-current-script#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altrusl/vuesence-book.git"
+  },
+  "author": {
+    "name": "Ruslan Makarov",
+    "url": "https://altrusl.github.io/cv"
+  },
+  "keywords": [
+    "vue",
+    "documentation",
+    "help system"
+  ],
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-bundle1": "vue-cli-service build --target lib --name book ./src/components/VuesenceBook.vue",
+    "build-bundle": "vue-cli-service build --target lib --name book ./src/index.js",
+    "build-all": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vuesence-book.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vuesence-book.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vuesence-book.min.js"
   },
   "dependencies": {
-    "core-js": "^3.1.2",
     "marked": "^1.0.0",
     "vue": "^2.6.10",
-    "vue-router": "^3.1.3",
-    "vuex": "^3.1.1"
+    "vue-router": "^3.1.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-service": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^6.8.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "rollup": "^1.17.0",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "rollup-plugin-vue": "^5.0.1"
   },
   "eslintConfig": {
     "root": true,
@@ -47,5 +81,13 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "README.md"
   ]
 }

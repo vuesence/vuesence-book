@@ -1,2 +1,2 @@
 # vuesence-book
-Vue.js based Help system
+Vue.js based help/documentation system

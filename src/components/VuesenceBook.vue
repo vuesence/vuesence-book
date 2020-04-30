@@ -96,7 +96,10 @@ export default {
 
 				this.articles = articles;
 
-				if (this.options.useRouter && this.$route.params.id && articles.hasOwnProperty(this.$route.params.id)){
+				if (this.options.useRouter 
+					&& this.$route.params.id 
+					&& Object.prototype.hasOwnProperty.call(this.articles, this.$route.params.id)
+				) {
 					this.article = this.articles[this.$route.params.id];					
 				} else {
 					this.article = this.articles[this.config.startArticle];					
@@ -185,60 +188,63 @@ export default {
 				}
 			}
 		},
-		async calculateHeadings() {
-			await this.$nextTick();
+		calculateHeadings() {
+			this.$nextTick().then(() => {
+				this.articleNavTree = []
+				this.articleNavList = []
 
-			this.articleNavTree = []
-			this.articleNavList = []
+				const headings = Array.from(this.$refs.articleContentWrapper.querySelectorAll('h1,h2,h3,h4,h5,h6'))
 
-			const headings = Array.from(this.$refs.articleContentWrapper.querySelectorAll('h1,h2,h3,h4,h5,h6'))
+				const buildItem = (items, index) => {
+					const domItem = headings[index]
+					const level = + domItem.tagName.match(/H(\d)/)[1]
 
-			const buildItem = (items, index) => {
-				const domItem = headings[index]
-				const level = + domItem.tagName.match(/H(\d)/)[1]
+					const item = {
+						to: {hash: domItem.id},
+						title: domItem.innerHTML,
+						el: domItem,
+						sections: [],
+						offsetTop: domItem.offsetTop,
+						isActive: false,
+					}
 
-				const item = {
-					to: {hash: domItem.id},
-					title: domItem.innerHTML,
-					el: domItem,
-					sections: [],
-					offsetTop: domItem.offsetTop,
-					isActive: false,
+					for(let i = index + 1; i < headings.length; i++) {
+						const headingLevel = +headings[i].tagName.match(/H(\d)/)[1]
+						if(headingLevel === level) {
+							break;
+						}
+						if(headingLevel === level + 1) {
+							buildItem(item.sections, i)
+						}
+					}
+					
+					items.push(item)
+					this.articleNavList[index] = item
 				}
 
-				for(let i = index + 1; i < headings.length; i++) {
-					const headingLevel = +headings[i].tagName.match(/H(\d)/)[1]
-					if(headingLevel === level) {
-						break;
+				const DOMHeadings = Array.from(
+					this.$refs.articleContentWrapper.querySelectorAll('h1,h2,h3,h4,h5,h6')
+				).map(heading => +heading.tagName.substr(1, 1))
+
+				const min = Math.min(...DOMHeadings)
+
+				headings.forEach((heading, index) => {
+					if(heading.tagName.toLowerCase() === `h${min}`) {
+						buildItem(this.articleNavTree, index)
 					}
-					if(headingLevel === level + 1) {
-						buildItem(item.sections, i)
-					}
-				}
+				});
+					
+				this.$nextTick().then(() => {
+					this.trackScroll()
+				});	
 				
-				items.push(item)
-				this.articleNavList[index] = item
-			}
+			});
 
-			const DOMHeadings = Array.from(
-				this.$refs.articleContentWrapper.querySelectorAll('h1,h2,h3,h4,h5,h6')
-			).map(heading => +heading.tagName.substr(1, 1))
-
-			const min = Math.min(...DOMHeadings)
-
-			headings.forEach((heading, index) => {
-				if(heading.tagName.toLowerCase() === `h${min}`) {
-					buildItem(this.articleNavTree, index)
-				}
-			})
-
-			await this.$nextTick
-			this.trackScroll()
 		}
 	},
 	watch: {
 		article: {
-			async handler() {
+			handler() {
 				// console.log("watcher article");
 				this.calculateHeadings();
 			}
