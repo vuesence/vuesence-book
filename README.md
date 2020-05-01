@@ -12,7 +12,7 @@ Vue.js based help/documentation system
 	<div id="app" class="app">
 		<VuesenceBook ref="v" :options='{
 			// loads articles on request
-			"articlesLazyLoad" : true,
+			"articleLazyLoad" : true,
 			// dont use basic CSS
 			"useDefaultCSS": true,
 			// show header. if false then sidebar opening in the mobile view

@@ -1,6 +1,5 @@
-// Import vue component
-import component from './components/VuesenceBook.vue';
-// import VuesenceBook from './components/VuesenceBook.vue';
+// Import vue components
+import VuesenceBook from './components/VuesenceBook.vue';
 import ArticleContent from './components/ArticleContent.vue';
 import NavigationItem from './components/NavigationItem.vue';
 import NavigationItemContent from './components/NavigationItemContent.vue';
@@ -9,7 +8,7 @@ import NavigationItemContent from './components/NavigationItemContent.vue';
 export function install(Vue) {
 	if (install.installed) return;
 	install.installed = true;
-	Vue.component('vuesence-book', component);
+	Vue.component('vuesence-book', VuesenceBook);
 }
 
 // Create module definition for Vue.use()
@@ -29,11 +28,10 @@ if (GlobalVue) {
 }
 
 // To allow use as module (npm/webpack/etc.) export component
-export default component;
+export default VuesenceBook;
 
 export {
-    // VuesenceBook,
     ArticleContent,
     NavigationItem,
-    NavigationItemContent    
+	NavigationItemContent,
 }

@@ -6,12 +6,12 @@
             {
                 "id": "overview",
                 "title": "Intro",
-                "url": "pages/intro.md"
+                "url": "intro.md"
             },
             {
                 "id": "headings",
                 "title": "Description",
-                "url": "pages/desc.html"
+                "url": "desc.html"
             },
             {
                 "title": "Category",
@@ -57,12 +57,12 @@
             {
                 "id": "overview2",
                 "title": "Intro 2",
-                "url": "pages/intro.md"
+                "url": "intro.md"
             },
             {
                 "id": "headings2",
                 "title": "Description2",
-                "url": "pages/desc.html"
+                "url": "desc.html"
             }
         ]
     }]

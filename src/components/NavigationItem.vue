@@ -61,7 +61,7 @@
 
 <script>
 import NavigationItemContent from "./NavigationItemContent";
-import { VsbEventBus } from "../vsb-utils";
+import { VsbEventBus } from "../utils";
 
 export default {
 	name: "NavigationItem",

@@ -4,8 +4,14 @@ import marked from 'marked'
 const VsbEventBus = new Vue();
 export {VsbEventBus};
 
+let articlePath;
+function setArticlePath(ap) {
+    articlePath = ap;
+}
+export {setArticlePath};
+
 function loadArticle(url, callback) {
-    fetch(url)
+    fetch(articlePath + url)
     .then((response) => response.text())
     .then((data) => {
         if (url.endsWith(".md")) {

@@ -2,9 +2,9 @@
 	<div id="app" class="app">
 		<VuesenceBook ref="v" :options='{
 			// loads articles on request
-			"articlesLazyLoad" : true,
-			// dont use basic CSS
-			"useDefaultCSS": true,
+			"articleLazyLoad" : true,
+			// path to articles (relative URL)
+			"articlePath" : "/pages/", 
 			// show header. if false then sidebar opening in the mobile view
 			// should be done programmatically
 			"showHeader": true,
@@ -28,17 +28,12 @@ import VuesenceBook from "./components/VuesenceBook";
 export default {
 	name: "app",
 	components: { VuesenceBook },
-	// mounted() {
-	// 	setInterval(() => {
-	// 		console.log("1");						
-	// 		this.$refs.v.toggleSidebar();
-	// 	}, 3000);
-	// }
 };
 </script>
 
 <style>	
 	/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');	 */
-	/* @import './vuepress-style.css';	 */
-	/* @import './google-style.css'; */
+	@import './css/default.css';
+	/* @import './css/vuepress-style.css';	 */
+	/* @import './css/google-style.css'; */
 </style>

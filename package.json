@@ -1,7 +1,7 @@
 {
   "name": "@vuesence/book",
   "description": "Help/documentation system",
-  "version": "0.3.37",
+  "version": "0.3.39",
   "private": false,
   "main": "dist/vuesence-book.umd.js",
   "module": "dist/vuesence-book.esm.js",
@@ -30,9 +30,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build --target lib --name vuesence-book ./src/wrapper.js",
-    "build1": "vue-cli-service build --target lib --name vuesence-book ./src/w.js",
-    "build2": "vue-cli-service build --target lib --name vuesence-book ./src/components/VuesenceBook.vue"
+    "build": "vue-cli-service build --target lib --name vuesence-book ./src/wrapper.js"
   },
   "dependencies": {
     "marked": "^1.0.0",

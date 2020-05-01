@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import {loadArticle} from "../vsb-utils";
+import {loadArticle} from "../utils";
 
 export default {
     name: "ArticleContent",
@@ -19,7 +19,9 @@ export default {
                 return;
             }
 
-            if (this.options.articlesLazyLoad && this.article.url && !this.article.content) {                        
+            if (this.options.articleLazyLoad 
+                && this.article.url 
+                && !this.article.content) {                        
                 loadArticle(this.article.url, (data) => {
                     this.$set(this.article, 'content', data);
                     this.articleContent = this.article.content;
