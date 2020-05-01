@@ -32,9 +32,8 @@
 
 <script>
 import NavigationItemContent from "./NavigationItemContent";
-import {loadArticle} from "../vsb-utils";
+import {loadArticle, VsbEventBus} from "../vsb-utils";
 import ArticleContent from "./ArticleContent";
-import {VsbEventBus} from "../vsb-utils";
 
 export default {
 	name: "VuesenceBook",
@@ -265,3 +264,283 @@ export default {
 
 };
 </script>
+
+<style>
+html {
+	scroll-behavior: smooth;
+}
+body {
+	color: #24292e;
+	margin: 0;
+	font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+ol,
+p,
+ul {
+	line-height: 1.3;
+}
+
+.vsb {
+	--header-height: 3em;
+	--header-desktop-height: 3em;
+	--header-display: "initial";
+	--header-desktop-display: "initial";
+	--article-navigation-root: "initial";
+}
+
+.vsb-header {
+	padding: 0.7em 1.5em;
+	padding-left: 4em;
+	line-height: 2.4em;
+	height: var(--header-height);
+	display: var(--header-display);
+	display: var(--header-desktop-display);
+	box-sizing: border-box;
+	border-bottom: 1px solid #eaecef;
+	position: fixed;
+	background-color: white;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	right: 0;
+}
+.vsb-sidebar-button {
+	cursor: pointer;
+	display: none;
+	/* width: 1.25em; */
+	/* height: 1.25em; */
+	position: absolute;
+	/* padding: .6em; */
+	top: 0.5em;
+	left: 1em;
+}
+
+.vsb-sidebar-button .icon {
+	display: block;
+	width: 1.25em;
+	height: 1.25em;
+}
+
+.vsb-header-title {
+	margin: auto;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.vsb-sidebar {
+	/* position: sticky;
+    top: 10px; */
+	background-color: #fff;
+	width: 18em;
+	position: fixed;
+	z-index: 10;
+	margin: 0;
+	top: var(--header-height);
+	top: var(--header-desktop-height);
+	left: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	border-right: 1px solid #eaecef;
+	overflow-y: auto;
+	padding: 1em;
+}
+
+/* .vsb-article-container {
+    padding-left: 18em;
+    display: flex;
+    padding-top: 4em;
+} */
+
+.vsb-container {
+	/* display: grid; */
+	/* padding-left: 18em; */
+	display: flex;
+	padding-top: var(--header-desktop-height);
+	/* align-items: flex-start; */
+	/* grid-template-columns: auto 200px; */
+	/* grid-gap: 20px; */
+}
+
+.vsb-article-content-wrapper {
+	flex-grow: 1;
+	padding: 0 1em;
+	padding-left: 20em;
+}
+
+.vsb-article-navigation {
+	position: sticky;
+	top: var(--header-height);
+	top: var(--header-desktop-height);
+	min-width: 14em;
+	display: block;
+	max-height: calc(100vh - 4em);
+}
+
+.vsb-article-navigation .vsb-nav-item--1 > .vsb-nav-title > a {
+	display: var(--article-navigation-root);
+}
+
+@media (max-width: 719px) {
+	.vsb-header {
+		padding-left: 4em;
+		height: var(--header-height);
+		display: var(--header-display);
+	}
+	.vsb-sidebar {
+		top: 0;
+		padding-top: 5em;
+		transform: translateX(-100%);
+		transition: transform 0.2s ease;
+	}
+	.sidebar-open .vsb-sidebar {
+		transform: translateX(0);
+	}
+
+	.vsb-article-content-wrapper {
+		padding: 0.5em 2em;
+	}
+	.vsb-article-navigation {
+		display: none;
+	}
+	.vsb-sidebar-button {
+		display: block;
+	}
+}
+
+.vsb-nav-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.vsb-nav-section {
+	padding-left: 14px;
+}
+
+.vsb-nav-title {
+	display: grid;
+	grid-template-columns: auto auto;
+	/* grid-gap: 6px; */
+	cursor: pointer;
+}
+
+.vsb-nav-toggle {
+	/* height: 20px; */
+	/* width: 20px; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	cursor: pointer;
+	/* background: #efefef; */
+}
+
+.vsb-nav-item {
+	margin-top: 10px;
+}
+
+.vsb-nav-link--active {
+	/* font-weight: bold; */
+}
+
+.vsb-sidebar .router-link-active {
+	font-weight: bold;
+}
+
+.vsb .vsb-main-nav {
+}
+
+.vsb .vsb-article-container {
+}
+.vsb .vsb-article-nav {
+}
+
+.vsb .vsb-nav-list {
+}
+
+.vsb .vsb-nav-item {
+	margin-top: 5px;
+}
+
+.vsb .vsb-article-content {
+}
+
+.vsb-article-navigation .vsb-nav-toggle {
+	display: none;
+}
+
+.vsb-sidebar .vsb-nav-item--0 > .vsb-nav-title {
+	color: #393939;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 2em;
+	margin-bottom: 8px;
+	margin-top: 0;
+}
+
+:not(.vsb-nav-item--0) > .vsb-nav-title a {
+	border: none;
+	color: #717171;
+	/* display: block; */
+	font-size: 1em;
+	padding: 4px 0;
+	transition: color 0.3s;
+	text-decoration: none;
+}
+
+.vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a.router-link-active,
+.vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a:hover,
+.vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a:focus,
+:not(.vsb-nav-item--0) > a:hover,
+:not(.vsb-nav-item--0) > a.vsb-nav-link--active {
+	color: #d63540;
+}
+
+.vsb-nav-toggle .arrow {
+	float: right;
+	margin-right: 8px;
+	margin-top: -4px;
+	transform: rotate(90deg);
+	transition: transform 0.2s linear;
+}
+.vsb-nav-toggle.vsb-nav-toggle--active .arrow {
+	transform: rotate(180deg);
+}
+
+.vsb-article-navigation .vsb-nav-list.nav-level--1 {
+	border-left: 1px solid #e0e0e0;
+	padding: 10px 0 20px 15px;
+}
+
+.vsb-article-content {
+	font-size: 1.1em;
+}
+
+
+/* nav icon */
+.nav-icon {
+	width: 24px;
+}
+.nav-icon:after,
+.nav-icon:before,
+.nav-icon div {
+	background-color: #44494e;
+	border-radius: 3px;
+	content: "";
+	display: block;
+	height: 4px;
+	margin: 5.2px 0;
+	transition: all 0.2s ease-in-out;
+}
+.sidebar-open .nav-icon:before {
+	transform: translateY(9px) rotate(135deg);
+}
+.sidebar-open .nav-icon:after {
+	transform: translateY(-9px) rotate(-135deg);
+}
+.sidebar-open .nav-icon div {
+	transform: scale(0);
+}
+
+</style>

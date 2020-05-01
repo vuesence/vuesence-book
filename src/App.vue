@@ -5,7 +5,7 @@
 			"articlesLazyLoad" : true,
 			// dont use basic CSS
 			"useDefaultCSS": true,
-			// show header. if false then sidebar openning in the mobile view
+			// show header. if false then sidebar opening in the mobile view
 			// should be done programmatically
 			"showHeader": true,
 			// hide header in the desktop view
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style>	
-	@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');	
-	@import './vuepress-style.css';	
+	/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');	 */
+	/* @import './vuepress-style.css';	 */
 	/* @import './google-style.css'; */
 </style>
