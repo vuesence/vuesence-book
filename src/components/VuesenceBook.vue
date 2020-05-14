@@ -16,7 +16,7 @@
 			</aside>
 
 			<main ref='articleContentWrapper' class="vsb-article-content-wrapper">
-				<ArticleContent :article="article" :options="options" />            
+				<ArticleContent :article="article" article-lazy-load="this.articleLazyLoad" />            
 			</main>
 
 			<aside class="vsb-article-navigation">
@@ -38,7 +38,45 @@ import {loadArticle, VsbEventBus, setArticlePath} from "../utils";
 export default {
 	name: "VuesenceBook",
 	components: { NavigationItemContent, ArticleContent },
-	props: ['options'],
+	props: {
+		// loads articles on request
+		articleLazyLoad: {
+			type: Boolean,
+			default: false
+		},
+		// path to articles (relative URL)
+		articlePath: {
+			type: String,
+			default: "/pages/"
+		}, 
+		// show header. if false then sidebar opening in the mobile view
+		// should be done programmatically
+		showHeader: {
+			type: Boolean,
+			default: true
+		},
+		// hide header in the desktop view
+		hideHeaderInDesktopView: {
+			type: Boolean,
+			default: false
+		},
+		// hide the first root header (usually H1, coincides with article title )
+		hideRootInArticleNavigation: {
+			type: Boolean,
+			default: false
+		},
+		// header title
+		headerTitle: {
+			// type: String,
+			// default: "Vuesence.Book"
+		},
+		// whether VuesenceBook should use own Router - only if the containing app does not use any			
+		useRouter: {
+			type: Boolean,
+			default: true
+		},
+		aaa: String,
+	},
 	data() {
 		return {
 			config: [],
@@ -50,8 +88,8 @@ export default {
 	},
 	created() {
 		
-		if (this.options.articlePath) {	
-			setArticlePath(this.options.articlePath);
+		if (this.articlePath) {	
+			setArticlePath(this.articlePath);
 		}			
 
 		const xhr = new XMLHttpRequest()
@@ -70,7 +108,7 @@ export default {
 							articles[record.id].content = record.content
 						} else {
 							if (record.url) {
-								if (!this.options.articleLazyLoad) {
+								if (!this.articleLazyLoad) {
 									loadArticle(record.url, (data) => {
 											articles[record.id].content = data;
 									});
@@ -94,7 +132,7 @@ export default {
 
 				this.articles = articles;
 
-				if (this.options.useRouter 
+				if (this.useRouter 
 					&& this.$route.params.id 
 					&& Object.prototype.hasOwnProperty.call(this.articles, this.$route.params.id)
 				) {
@@ -110,18 +148,18 @@ export default {
 
 	mounted() {
 		
-		if (!this.options.showHeader) {
+		if (!this.showHeader) {
 			this.$refs.vsb.style.setProperty('--header-display', 'none');
 		}
-		if (this.options.hideHeaderInDesktopView || !this.options.showHeader) {
+		if (this.hideHeaderInDesktopView || !this.showHeader) {
 			this.$refs.vsb.style.setProperty('--header-desktop-height', '0');
 			this.$refs.vsb.style.setProperty('--header-desktop-display', 'none');
 		}
-		if (this.options.hideRootInArticleNavigation) {
+		if (this.hideRootInArticleNavigation) {
 			this.$refs.vsb.style.setProperty('--article-navigation-root', 'none');
 		}
 
-		this.$refs.vsb.querySelector(".vsb-header-title").textContent = this.options.headerTitle;
+		this.$refs.vsb.querySelector(".vsb-header-title").textContent = this.headerTitle;
 		
 		window.addEventListener('scroll', this.trackScroll)
 		window.addEventListener('resize', this.trackScroll)
@@ -143,7 +181,7 @@ export default {
 		VsbEventBus.$on("navigateTo", (item) => {
 			this.$refs.vsb.classList.remove("sidebar-open");
 			this.article = this.articles[item.id];
-			if (this.options.useRouter) {
+			if (this.useRouter) {
 				this.$router.push(item.id);
 			}
 		})

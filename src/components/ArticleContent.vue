@@ -7,7 +7,7 @@ import {loadArticle} from "../utils";
 
 export default {
     name: "ArticleContent",
-    props: ['article', 'options'],
+    props: ['article', 'articleLazyLoad'],
     data() {
         return {
             articleContent: ''
@@ -19,7 +19,7 @@ export default {
                 return;
             }
 
-            if (this.options.articleLazyLoad 
+            if (this.articleLazyLoad 
                 && this.article.url 
                 && !this.article.content) {                        
                 loadArticle(this.article.url, (data) => {

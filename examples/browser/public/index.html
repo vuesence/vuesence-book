@@ -13,16 +13,11 @@
 
 <body>
 	<div id="app" class="app">
-		<vuesence-book ref="v" :options='{
-			"articlesLazyLoad" : true,
-			"articlePath" : "/pages/", 
-			"showHeader": true,
-			"hideHeaderInDesktopView": false,
-			"hideRootInArticleNavigation": false,
-			"headerTitle": "Vuesence.Book",
-			"useRouter": false,
-		}'>
-		</vuesence-book>
+		<VuesenceBook
+			article-lazy-load=true
+			articlePath="/pages/"
+			header-title="Vuesence Book"
+		/>
 	</div>
 </body>
 
