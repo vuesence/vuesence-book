@@ -48,17 +48,6 @@ $ npm install @vuesence/book
 ```
 
 
-## Features
-
-  * Robust routing
-  * Focus on high performance
-  * Super-high test coverage
-  * HTTP helpers (redirection, caching, etc)
-  * View system supporting 14+ template engines
-  * Content negotiation
-  * Executable for generating applications quickly
-
-
 ## License
 
 @vuesence/book is freely distributable under the terms of the [MIT license](LICENSE).
