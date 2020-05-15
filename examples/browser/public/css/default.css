@@ -201,6 +201,10 @@ ul {
 	margin-top: 5px;
 }
 
+.vsb .vsb-article-content img {
+    max-width: 100%;
+}
+
 .vsb .vsb-article-content code {
     font-size: 1.1em;
     background-color: #f0f0f0;
