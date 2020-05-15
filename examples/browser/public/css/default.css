@@ -99,6 +99,7 @@ ul {
 	flex-grow: 1;
 	padding: 0 1em;
 	padding-left: 20em;
+	max-width: calc(100% - 34em);
 }
 
 .vsb-article-navigation {
@@ -195,7 +196,15 @@ ul {
 	margin-top: 5px;
 }
 
-.vsb .vsb-article-content {
+.vsb .vsb-article-content code {
+	max-width: 100%;
+	overflow-x: auto;
+	display: block;
+	background-color: #eee;
+    width: fit-content;
+    padding: 0.7em;
+    margin: 1em 0;
+    border: 1px solid #bbb;
 }
 
 .vsb-article-navigation .vsb-nav-toggle {
