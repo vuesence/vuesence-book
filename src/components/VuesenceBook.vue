@@ -47,7 +47,7 @@ export default {
 		// path to articles (relative URL)
 		articlePath: {
 			type: String,
-			default: "/pages/"
+			default: "pages/"
 		}, 
 		// show header. if false then sidebar opening in the mobile view
 		// should be done programmatically
