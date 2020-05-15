@@ -1,0 +1,69 @@
+.app .vsb {    
+    --header-height: 3.2em;
+    --header-desktop-height: 3.2em;
+    /* font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #e8eaed;
+    font-family: Roboto, "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Naskh Arabic", "Noto Sans Thai", "Noto Sans Hebrew", "Noto Sans Bengali", sans-serif;
+    font-size: 15px;
+    color: rgb(32, 33, 36);
+}
+
+.vsb .vsb-article-content {
+    background-color: white;
+    padding: 1em 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+.vsb .vsb-article-content p {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.vsb .vsb-nav-title {
+    font-weight: 500;
+    font-size: 0.92em;
+    line-height: 1.1em;
+}
+
+.vsb h2, .vsb h3 {
+    background: #e8eaed;
+    color: #202124;
+    font: 500 14px/20px Roboto,Noto Sans,Noto Sans JP,Noto Sans KR,Noto Naskh Arabic,Noto Sans Thai,Noto Sans Hebrew,Noto Sans Bengali,sans-serif;
+    height: 1.5em;
+    padding: 8px;
+    vertical-align: middle;
+}
+.vsb h3 {
+    font-size: 1.2em;
+    height: 1.1em;
+}
+
+.vsb .vsb-article-navigation > .vsb-nav-list.nav-level--1  {
+    border-left:4px solid #039be5;
+    padding-left: 1em;
+    padding-top: 0;
+    margin-top: 1.5em;
+}
+
+.vsb .vsb-nav-item.vsb-nav-item--0 {
+    border-bottom: 1px solid #dadce0;
+}
+
+.vsb .vsb-sidebar {
+    background-color: #fafafa;
+}
+
+.vsb .vsb-header {
+    line-height: 1.4em;
+}
+
+.vsb .vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a.router-link-active, 
+.vsb .vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a:hover, 
+.vsb .vsb-sidebar :not(.vsb-nav-item--0) > .vsb-nav-title a:focus,
+.vsb :not(.vsb-nav-item--0) > a:hover,
+.vsb :not(.vsb-nav-item--0) > a.vsb-nav-link--active {
+    color: #1967d2;
+    /* font-weight: 600; */
+}
+

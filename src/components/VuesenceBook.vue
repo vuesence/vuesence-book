@@ -67,8 +67,8 @@ export default {
 		},
 		// header title
 		headerTitle: {
-			// type: String,
-			// default: "Vuesence.Book"
+			type: String,
+			default: "Vuesence.Book"
 		},
 		// whether VuesenceBook should use own Router - only if the containing app does not use any			
 		useRouter: {
