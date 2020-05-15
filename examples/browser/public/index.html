@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-	<title>vuesence-book demo</title>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<title>vuesence-book demo</title>
 
-	<script src="https://unpkg.com/vue"></script>
-	<script src="./vsb.umd.js"></script>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="./vsb.umd.min.js"></script>
 
-	<link rel="stylesheet" href="css/default.css">
+		<link rel="stylesheet" href="css/default.css">
+		<!-- <link rel="stylesheet" href="css/vuepress-style.css"> -->
+		<!-- <link rel="stylesheet" href="css/google-style.css"> -->
 
+	</head>
 
-<body>
-	<div id="app" class="app">
-		<VuesenceBook
-			article-lazy-load=true
-			articlePath="/pages/"
-			header-title="Vuesence Book"
-		/>
-	</div>
-</body>
+	<body>
+		<div id="app" class="app">
+			<vuesence-book
+				v-bind:article-lazy-load="true"
+				articlePath="/pages/"
+				header-title="Vuesence Book Title"
+			/>
+		</div>
+	</body>
 
-<script>
-	new Vue({ el: '#app' })
-</script>
+	<script>
+		new Vue({ el: '#app' })
+	</script>
 
 </html>

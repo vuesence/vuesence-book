@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build --target lib --name vsb ./src/wrapper.js"
+    "build": "vue-cli-service build --target lib --name vsb ./src/wrapper.js && cp dist/vsb.umd.min.js examples/browser/public/"
   },
   "dependencies": {
     "marked": "^1.0.0",

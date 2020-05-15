@@ -1,9 +1,9 @@
 <template>
 	<div id="app" class="app">
 		<VuesenceBook
-			article-lazy-load=true
+			:article-lazy-load="true"
 			articlePath="/pages/"
-			header-title="Vuesence Book"
+			header-title="Vuesence Book Title"
 		>
 		</VuesenceBook>
 	</div>

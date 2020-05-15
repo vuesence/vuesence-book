@@ -74,8 +74,7 @@ export default {
 		useRouter: {
 			type: Boolean,
 			default: true
-		},
-		aaa: String,
+		}
 	},
 	data() {
 		return {
