@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build --target lib --name vuesence-book ./src/wrapper.js && cp dist/vuesence-book.umd.min.js  examples/browser/public/ && cp -rf src/css/* examples/browser/public/css && cp -rf public/* examples/browser/public/ && cp -rf src/css/* examples/nodejs/public/css && cp -rf examples/browser/public/* docs"
+    "build": "vue-cli-service build --target lib --name vuesence-book ./src/wrapper.js && cp dist/vuesence-book.umd.min.js  examples/browser/public/ && cp -rf src/css/* examples/browser/public/css && cp -rf public/images/* examples/browser/public/images && cp -rf public/pages/* examples/browser/public/pages && cp -rf public/config.json examples/browser/public/config.json && cp -rf src/css/* examples/nodejs/public/css && cp -rf examples/browser/public/* docs"
   },
   "dependencies": {
     "marked": "^1.0.0",
