@@ -99,7 +99,7 @@ ul {
 	flex-grow: 1;
 	padding: 0 1em;
 	padding-left: 20em;
-	max-width: calc(100% - 34em);
+	max-width: calc(100% - 35em);
 }
 
 .vsb-article-navigation {
@@ -133,6 +133,7 @@ ul {
 
 	.vsb-article-content-wrapper {
 		padding: 0.5em 2em;
+		max-width: unset;
 	}
 	.vsb-article-navigation {
 		display: none;
@@ -192,11 +193,21 @@ ul {
 .vsb .vsb-nav-list {
 }
 
+.vsb .vsb-article-content li {
+    margin-bottom: .6em;
+}
+
 .vsb .vsb-nav-item {
 	margin-top: 5px;
 }
 
 .vsb .vsb-article-content code {
+    font-size: 1.1em;
+    background-color: #f0f0f0;
+    padding: 0em 0.3em;
+}
+
+.vsb .vsb-article-content pre code {
 	max-width: 100%;
 	overflow-x: auto;
 	display: block;
