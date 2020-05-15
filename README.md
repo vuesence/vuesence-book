@@ -41,6 +41,7 @@ Vue.js based help/documentation system
 		<div id="app" class="app">
 			<vuesence-book
 				header-title="My Book"
+				:use-router="false"
 			/>
 		</div>
 	</body>
@@ -72,7 +73,7 @@ $ npm install @vuesence/book
 -   __showHeader__ - whether to show header. If `false` then sidebar opening in the mobile view should be done programmatically. Default: `true`
 -   __hideHeaderInDesktopView__ - hide header in the desktop view. Useful when you want to show the header with 'hamburger' button only in the mobile view to allow usage of menu sidebar. Default: `false`
 -	__hideRootInArticleNavigation__ - hide the first root header (usually H1 and coincides with article title) Default: `false`
--	__useRouter__ - whether VuesenceBook should use own Router - only if the containing app does not use any. Default: `true`
+-	__useRouter__ - whether VuesenceBook should use own Router - only if the containing Node.js app does not use any. Must be set to `false` for stand-alone browser usage. Default: `true`
 
 All props are optional
 
