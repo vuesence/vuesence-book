@@ -8,10 +8,10 @@
 ## Features
 
 - Simple, lite, fast
-- Very suitable for embedded in the website help/documentation content
+- Very suitable for embedding help/documentation content into the website
 - Easily and highly customizable with CSS
 - Easy to use content management. No need to regenerate the website each time content is changed
-- Focus on performance - data can be preloaded
+- Focus on performance - not large articles can be preloaded
 - Small size of the package
 - In general no dependencies (optional `marked` or other MD library for markdown support and `vue-router` for routing)
 
@@ -79,7 +79,7 @@ export default {
 
 ## Browser usage example
 
-The Vuesence Book can be run as a standalone web component in the browser. Vue.js and vsb.umd.min.js must be loaded. Vue-router must be disabled.
+The Vuesence Book can be run as a standalone web component in the browser. Vue.js and vuesence-book.umd.min.js must be loaded. Vue-router must be disabled.
 
 ```html
 <!DOCTYPE html>
@@ -90,7 +90,7 @@ The Vuesence Book can be run as a standalone web component in the browser. Vue.j
 		<title>vuesence-book demo</title>
 
 		<script src="https://unpkg.com/vue"></script>
-		<script src="./vsb.umd.min.js"></script>
+		<script src="./vuesence-book.umd.min.js"></script>
 
         <link rel="stylesheet" href="css/default.css">        
 		<!-- You can plug in any custom CSS here to style the Vuesence Book-->
