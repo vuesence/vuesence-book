@@ -11,6 +11,9 @@ function setArticlePath(ap) {
 export {setArticlePath};
 
 function loadArticle(url, callback) {
+    console.log("----");    
+    console.log(articlePath);
+    
     fetch(articlePath + url)
     .then((response) => response.text())
     .then((data) => {

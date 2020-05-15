@@ -2,7 +2,7 @@
 	<div id="app" class="app">
 		<VuesenceBook
 			:article-lazy-load="true"
-			articlePath="/pages/"
+			articlePath="pages/"
 			header-title="Vuesence Book"
 		/>
 	</div>
