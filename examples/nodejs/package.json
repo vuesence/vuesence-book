@@ -4,7 +4,7 @@
   "description": "Example of usage of vuesence-book component in Node.js",
   "main": "index.js",
   "dependencies": {
-    "@vuesence/book": "^0.3.39",
+    "@vuesence/book": "^0.3.41",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },

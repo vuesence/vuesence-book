@@ -19,7 +19,8 @@ Vuesence book is responsive and can be styled with custom CSS.
 
 There is a `config.json` configuration file that defines the content tree (TOC in the left column). It also contains links to articles in HTML or Markdown formats or the content of the article itself in an HTML format
 
-Self-explaining example of the `config.json` can be seen here - [https://github.com/altrusl/vuesence-book/blob/master/public/config.json](https://github.com/altrusl/vuesence-book/blob/master/public/config.json)
+Self-explaining example of the `config.json` and articles of this documentation can be found here - 
+<a href="https://github.com/altrusl/vuesence-book/tree/master/docs" target="_blank">https://github.com/altrusl/vuesence-book/tree/master/docs</a>
 
 ## Usage
 
