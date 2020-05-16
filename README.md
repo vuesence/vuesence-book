@@ -100,14 +100,14 @@ The Vuesence Book can be run as a standalone web component in the browser. Vue.j
 
 		<script src="https://unpkg.com/vue"></script>
 		<script src="https://unpkg.com/@vuesence/book"></script>
-
-        <link rel="stylesheet" href="https://unpkg.com/@vuesence/book/src/css/default.css">      
+		
+		<link rel="stylesheet" href="https://unpkg.com/@vuesence/book/src/css/default.css">      
 		<!-- You can plug in any custom CSS here to style the Vuesence Book-->
 		<!-- <link rel="stylesheet" href="css/vuepress-style.css"> -->
 		<!-- <link rel="stylesheet" href="css/google-style.css"> -->
 	</head>
 
-	<body>
+	<body>	
 		<div id="app" class="app">
 			<vuesence-book
 				header-title="My Book"
