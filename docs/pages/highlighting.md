@@ -5,7 +5,7 @@ It is possible optionally to use `highlight.js` (or some other) library for high
 In order to do that you need to install `highlight.js`
 
 ```bash
-$ npm install highlight.js
+$ npm install highlight.js --save
 ```
 
 And make small changes in the __util.js__ file

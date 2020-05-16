@@ -124,7 +124,7 @@ This is a [Node.js](https://nodejs.org/) module available through the
 Installation is done using the `npm install` command:
 
 ```bash
-$ npm install @vuesence/book
+$ npm install @vuesence/book --save
 ```
 
 ### Props
