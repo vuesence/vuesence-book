@@ -1,4 +1,4 @@
-## Vue.js based documentation system web component
+## Minimalistic Vue.js based documentation system
 
 ![Node.js CI](https://github.com/altrusl/vuesence-book/workflows/Node.js%20CI/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/altrusl/vuesence-book/badge.svg)](https://snyk.io/test/github/altrusl/vuesence-book)
