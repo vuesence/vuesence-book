@@ -273,6 +273,12 @@ ul {
 	font-size: 1.1em;
 }
 
+.vsb-article-content blockquote {
+    padding: 0.1em 1.2em;
+    background-color: #eeeded;
+    margin: 1em;
+}
+
 
 /* nav icon */
 .nav-icon {

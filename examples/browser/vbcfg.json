@@ -40,6 +40,11 @@
                         "id": "vue-router",
                         "title": "Vue-router",
                         "url": "vue-router.md"
+                    },
+                    {
+                        "id": "styling",
+                        "title": "Styling",
+                        "url": "styling.md"
                     }
                 ]
             },
