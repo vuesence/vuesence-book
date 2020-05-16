@@ -11,7 +11,7 @@ The Vuesence Book can be run as a standalone web component in the browser. Vue.j
 		<title>vuesence-book demo</title>
 
 		<script src="https://unpkg.com/vue"></script>
-		<script src="./vuesence-book.umd.min.js"></script>
+		<script src="https://unpkg.com/@vuesence/book@0.3.42"></script>
 
         <link rel="stylesheet" href="css/default.css">        
 		<!-- You can plug in any custom CSS here to style the Vuesence Book-->

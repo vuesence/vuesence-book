@@ -15,6 +15,8 @@
 - Small size of the package
 - In general no dependencies (optional `marked` or other MD library for markdown support and `vue-router` for routing)
 
+![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg)
+
 ### Detailed documentation
 
 <a href="https://altrusl.github.io/vuesence-book/" target="_blank">https://altrusl.github.io/vuesence-book/</a>
