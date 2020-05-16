@@ -93,7 +93,7 @@
             {
                 "id": "5",
                 "title": "Inline HTML",
-                "content": "<h2>Inline HTML article</h2><p>This text is embedded in the <b>config.json</b> file. Other articles are in separate HTML and MD files.</p> "
+                "content": "<h2>Inline HTML article</h2><p>This text is embedded in the <b>vbcfg.json</b> file. Other articles are in separate HTML and MD files.</p> "
             }
         ]
     }

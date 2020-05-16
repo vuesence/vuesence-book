@@ -92,7 +92,7 @@ export default {
 		}			
 
 		const xhr = new XMLHttpRequest()
-		xhr.open('GET', 'config.json', true)
+		xhr.open('GET', 'vbcfg.json', true)
 		xhr.onreadystatechange = () => {
 			if(xhr.readyState === 4) {
 				this.config = JSON.parse(xhr.responseText);

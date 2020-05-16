@@ -1,0 +1,101 @@
+{
+    "startArticle": "overview",
+    "data": [{
+        "title": "TOC",
+        "sections": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "url": "overview.md"
+            },
+            {
+                "id": "features",
+                "title": "Features",
+                "url": "features.md"
+            },
+            {
+                "id": "license",
+                "title": "License",
+                "url": "license.md"
+            },
+            {
+                "title": "Setup",
+                "sections": [
+                    {
+                        "id": "install",
+                        "title": "Installation",
+                        "url": "installation.md"
+                    },
+                    {
+                        "id": "highlighting",
+                        "title": "Highlighting",
+                        "url": "highlighting.md"
+                    },
+                    {
+                        "id": "props",
+                        "title": "Props",
+                        "url": "props.md"
+                    },
+                    {
+                        "id": "vue-router",
+                        "title": "Vue-router",
+                        "url": "vue-router.md"
+                    }
+                ]
+            },
+            {
+                "title": "Usage",
+                "sections": [
+                    {
+                        "id": "nodejs",
+                        "title": "Node.js",
+                        "url": "example-nodejs.md"
+                    },
+                    {
+                        "id": "browser",
+                        "title": "Browser",
+                        "url": "example-browser.md"
+                    }
+                ]
+            },
+            {
+                "id": "playground",
+                "title": "Playground",
+                "url": "playground.md"
+            }
+            
+        ]
+    },
+    {
+        "title": "Examples",
+        "id": "design",
+        "sections": [
+            {
+                "title": "Subcategory",
+                "sections": [
+                    {
+                        "id": "3",
+                        "title": "Article 1",
+                        "content": "<h2>Article 1</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+                    },
+                    {
+                        "id": "4",
+                        "title": "Article 2",
+                        "content": "<h2>Article 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+                    }
+                ]
+            },
+            {
+                "id": "long-content",
+                "title": "Long article",
+                "url": "long-content.html"
+            },        
+            {
+                "id": "5",
+                "title": "Inline HTML",
+                "content": "<h2>Inline HTML article</h2><p>This text is embedded in the <b>vbcfg.json</b> file. Other articles are in separate HTML and MD files.</p> "
+            }
+        ]
+    }
+   ]
+}

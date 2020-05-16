@@ -4,6 +4,15 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/altrusl/vuesence-book/badge.svg)](https://snyk.io/test/github/altrusl/vuesence-book)
 [![Dependencies](https://david-dm.org/altrusl/vuesence-book.svg)](https://david-dm.org/altrusl/vuesence-book.svg)
 
+# Overview
+
+Vuesence Book is a Vue component that can be used for help or documentation systems.
+
+Its layout is similar to the layouts of [Docusaurus ](https://v2.docusaurus.io/docs/introduction) or [Google doc system](https://developers.google.com/web/ilt/pwa). 
+
+But unlike many other documentation systems Vuesence Book is not a *static site generator*. You can change the content without regenerating the entire website.
+
+![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg)
 
 ## Features
 
@@ -15,7 +24,7 @@
 - Small size of the package
 - In general no dependencies (optional `marked` or other MD library for markdown support and `vue-router` for routing)
 
-![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg)
+
 
 ### Detailed documentation
 
@@ -25,13 +34,7 @@
 
 Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank">codesandbox.io</a> (Node.js version, might be slightly out of date)
 
-# Overview
 
-Vuesence Book is a Vue component that can be used for help or documentation systems.
-
-Its layout is similar to layouts of [Docusaurus ](https://v2.docusaurus.io/docs/introduction) or [Google doc system](https://developers.google.com/web/ilt/pwa). 
-
-But unlike many other documentation systems Vuesence Book is not a *static site generator*. You can change the content without regenerating the entire website.
 
 ## Layout
 
@@ -41,12 +44,12 @@ Vuesence book is responsive and can be styled with custom CSS.
 
 ## Content
 
-There is a `config.json` configuration file that defines the content tree (TOC in the left column). It also contains links to articles in HTML or Markdown formats or the content of the article itself in an HTML format
+There is a `vbcfg.json` configuration file that defines the content tree (TOC in the left column). It also contains links to articles in HTML or Markdown formats or the content of the article itself in an HTML format
 
-Self-explaining example of the `config.json` and articles of this documentation can be found here - 
+Self-explaining example of the `vbcfg.json` and articles of this documentation can be found here - 
 <a href="https://github.com/altrusl/vuesence-book/tree/master/docs" target="_blank">https://github.com/altrusl/vuesence-book/tree/master/docs</a>
 
-## Usage
+# Usage
 
 Vuesence Book can be used as a Vue component in the Vue.js project or directly in a browser
 
@@ -54,7 +57,11 @@ Vuesence Book can be used as a Vue component in the Vue.js project or directly i
 
 ## Node.js usage example
 
-```vue
+```bash
+npm install @vuesence/book --save
+```
+
+```html
 <template>
   <div id="app" class="app">
     <VuesenceBook header-title="My Book" :use-router="false"/>
@@ -92,7 +99,7 @@ The Vuesence Book can be run as a standalone web component in the browser. Vue.j
 		<title>vuesence-book demo</title>
 
 		<script src="https://unpkg.com/vue"></script>
-		<script src="./vuesence-book.umd.min.js"></script>
+		<script src="https://unpkg.com/@vuesence/book@0.3.42"></script>
 
         <link rel="stylesheet" href="css/default.css">        
 		<!-- You can plug in any custom CSS here to style the Vuesence Book-->
@@ -116,26 +123,17 @@ The Vuesence Book can be run as a standalone web component in the browser. Vue.j
 </html>
 ```
 
-## Installation
 
-This is a [Node.js](https://nodejs.org/) module available through the
-[npm registry](https://www.npmjs.com/)
 
-Installation is done using the `npm install` command:
+### VuesenceBook Props
 
-```bash
-$ npm install @vuesence/book --save
-```
-
-### Props
-
--   __articleLazyLoad__ - loads articles on request. If `false` than loads all articles at component creation time. Default: `false`
--   __articlePath__ - path to articles (relative URL). Default: "pages/"
--   __headerTitle__ - header title. Default: "Vuesence.Book"
--   __showHeader__ - whether to show header. If `false` then sidebar opening in the mobile view should be done programmatically. Default: `true`
--   __hideHeaderInDesktopView__ - hide header in the desktop view. Useful when you want to show the header with 'hamburger' button only in the mobile view to allow usage of menu sidebar. Default: `false`
--	__hideRootInArticleNavigation__ - hide the first root header (usually H1 and coincides with article title) Default: `false`
--	__useRouter__ - whether VuesenceBook should use own Router - only if the containing Node.js app does not use any. Must be set to `false` for stand-alone browser usage. Default: `true`
+-   __article-lazy-load__ - loads articles on request. If `false` than loads all articles at component creation time. Default: `false`
+-   __article-path__ - path to articles (relative URL). Default: "pages/"
+-   __header-title__ - header title. Default: "Vuesence.Book"
+-   __show-header__ - whether to show header. If `false` then sidebar opening in the mobile view should be done programmatically. Default: `true`
+-   __hide-header-in-desktop-view__ - hide header in the desktop view. Useful when you want to show the header with 'hamburger' button only in the mobile view to allow usage of menu sidebar. Default: `false`
+-	__hide-root-in-article-navigation__ - hide the first root header (usually H1 and coincides with article title) Default: `false`
+-	__use-router__ - whether VuesenceBook should use own Router - only if the containing Node.js app does not use any. Must be set to `false` for stand-alone browser usage. Default: `true`
 
 All props are optional
 
