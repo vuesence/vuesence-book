@@ -35,6 +35,11 @@
                         "id": "props",
                         "title": "Props",
                         "url": "props.md"
+                    },
+                    {
+                        "id": "vue-router",
+                        "title": "Vue-router",
+                        "url": "vue-router.md"
                     }
                 ]
             },
