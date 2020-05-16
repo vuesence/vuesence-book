@@ -88,7 +88,7 @@ export default {
 
 ## Browser usage example
 
-The Vuesence Book can be run as a standalone web component in the browser. Vue.js and vuesence-book.umd.min.js must be loaded. Vue-router must be disabled.
+The Vuesence Book can be run as a standalone web component in the browser. Vue.js and vuesence-book module must be loaded. Vue-router must be disabled.
 
 ```html
 <!DOCTYPE html>
@@ -99,7 +99,7 @@ The Vuesence Book can be run as a standalone web component in the browser. Vue.j
 		<title>vuesence-book demo</title>
 
 		<script src="https://unpkg.com/vue"></script>
-		<script src="https://unpkg.com/@vuesence/book@0.3.42"></script>
+		<script src="https://unpkg.com/@vuesence/book"></script>
 
         <link rel="stylesheet" href="css/default.css">        
 		<!-- You can plug in any custom CSS here to style the Vuesence Book-->
