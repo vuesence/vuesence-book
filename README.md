@@ -16,7 +16,7 @@ Minimalistic Vue.js based documentation system
 
 # How to use
 
-Vuesence Book can be used as a Vue component in a Vue.js project or stand-alone in a browser
+*Vuesence Book* can be used as a Vue component in a Vue.js project or stand-alone in a browser
 
 ## Node.js usage example
 
@@ -48,7 +48,7 @@ export default {
 
 ## Browser usage example
 
-The Vuesence Book can be run as a stand-alone web component in the browser. `Vue` and `@vuesence/book` packages should be loaded as scripts. Vue-router must be disabled.
+The `Vuesence Book` can be run as a stand-alone web component in the browser. `Vue` and `@vuesence/book` packages should be loaded as scripts. Vue-router must be disabled.
 
 ```html
 <head>
