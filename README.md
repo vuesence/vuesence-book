@@ -11,7 +11,8 @@ Minimalistic Vue.js based documentation system
 <!-- Vuesence Book is a Vue component that can be used for help or documentation systems. -->
 
 <!-- ![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg) -->
-![VB-preview](https://github.com/altrusl/vuesence-book/blob/master/docs/images/vb-preview.gif?raw=true)
+<!-- ![VB-preview](https://github.com/altrusl/vuesence-book/blob/master/docs/images/vb-preview.gif?raw=true) -->
+<img style="border: 1px solid #ccc;" src="https://github.com/altrusl/vuesence-book/blob/master/docs/images/vb-preview.gif?raw=true" />
 
 # How to use
 
@@ -112,6 +113,12 @@ Self-explaining example of the `vbcfg.json` and articles of the documentation ca
 - Themes
 - Top nav bar
 - Footer for stand-alone version
+- CEO issue
+
+
+## Troubleshooting
+
+If something isn't working properly use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
 
 ## License
 
