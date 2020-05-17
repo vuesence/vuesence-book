@@ -10,13 +10,11 @@ Minimalistic Vue.js based documentation system
 
 <!-- Vuesence Book is a Vue component that can be used for help or documentation systems. -->
 
-<!-- ![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg) -->
-<!-- ![VB-preview](https://github.com/altrusl/vuesence-book/blob/master/docs/images/vb-preview.gif?raw=true) -->
-<img style="border: 1px solid #ccc;" src="https://github.com/altrusl/vuesence-book/blob/master/docs/images/vb-preview.gif?raw=true" />
+![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg)
 
 # How to use
 
-*Vuesence Book* can be used as a Vue component in a Vue.js project or stand-alone in a browser
+**Vuesence Book** can be used as a Vue component in a Vue.js project or stand-alone in a browser
 
 ## Node.js usage example
 
@@ -48,7 +46,7 @@ export default {
 
 ## Browser usage example
 
-The `Vuesence Book` can be run as a stand-alone web component in the browser. `Vue` and `@vuesence/book` packages should be loaded as scripts. Vue-router must be disabled.
+The **Vuesence Book** can be run as a stand-alone web component in the browser. `Vue` and `@vuesence/book` packages should be loaded as scripts. Vue-router must be disabled.
 
 ```html
 <head>
@@ -95,7 +93,7 @@ Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank"
 
 ## Content management
 
-Unlike many other documentation systems Vuesence Book is not a *static site generator*. You can change the content without rebuilding the entire website.
+Unlike many other documentation systems **Vuesence Book** is not a *static site generator*. You can change the content without rebuilding the entire website.
 
 `vbcfg.json` configuration file defines the content tree (TOC in the left column). It also contains links to articles in HTML or Markdown formats or the content of the article itself in an HTML format
 
@@ -122,4 +120,4 @@ If something isn't working properly use GitHub's issue reporter or send me an <a
 
 ## License
 
-@vuesence/book is freely distributable under the terms of the [MIT license](LICENSE).
+**@vuesence/book** package is freely distributable under the terms of the [MIT license](LICENSE).
