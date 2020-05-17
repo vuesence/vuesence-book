@@ -22,6 +22,6 @@ export default {
 	/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');	 */
 	@import './css/default.css';
 	/* @import './css/highlight.js.min.css'; */
-	/* @import './css/vuepress-style.css';	 */
+	@import './css/vuepress-style.css';	
 	/* @import './css/google-style.css'; */
 </style>
