@@ -2,9 +2,11 @@
 
 Vuesence Book is a Vue.js component that can be used for building documentation systems.
 
-Its layout is similar to layouts of [Docusaurus ](https://v2.docusaurus.io/docs/introduction) or [Google doc system](https://developers.google.com/web/ilt/pwa). 
+<!-- Its layout is similar to layouts of [Docusaurus ](https://v2.docusaurus.io/docs/introduction) or [Google doc system](https://developers.google.com/web/ilt/pwa). 
 
-![vb-preview](images/vb-preview.jpg)
+![vb-preview](images/vb-preview.jpg) -->
+
+![VB-preview](images/vb-preview.jpg)
 
 
 But unlike many other documentation systems Vuesence Book is not a *static site generator*. You can change the content without regenerating the entire website.
