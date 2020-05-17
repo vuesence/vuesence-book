@@ -23,3 +23,9 @@
     font-weight: 500;
 }
 
+.vsb .vsb-article-content a {
+    color: #3eaf7c;
+    font-weight: 500;
+    font-size: 95%;
+    text-decoration: none;
+}

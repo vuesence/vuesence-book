@@ -1,6 +1,6 @@
 # Cosplay
 
-From Wikipedia, the free encyclopedia
+*From Wikipedia, the free encyclopedia*
 
 ## Definition
 
@@ -52,9 +52,9 @@ Otaku Unite!, a 2004 film about otaku subculture, features extensive footage of 
 
 ### Related Links
 
-- Tokyo Game Show 2019 Official site: https://expo.nikkeibp.co.jp/tgs/2019/en/
-- Tokyo Game Show 2019 Official Twitter: https://twitter.com/tokyo_game_show
-- Tokyo Game Show 2019 Official facebook: https://www.facebook.com/tokyogameshow
+1. Tokyo Game Show 2019 Official site: https://expo.nikkeibp.co.jp/tgs/2019/en/
+2. Tokyo Game Show 2019 Official Twitter: https://twitter.com/tokyo_game_show
+3. Tokyo Game Show 2019 Official facebook: https://www.facebook.com/tokyogameshow
 
 
 ![image](images/cosplay2.jpg)

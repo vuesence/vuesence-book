@@ -198,7 +198,8 @@ ul {
 }
 
 .vsb .vsb-article-content img {
-    max-width: 100%;
+	max-width: 100%;
+	margin: 1em 0;
 }
 
 .vsb .vsb-article-content code {
@@ -272,6 +273,10 @@ ul {
 
 .vsb-article-content {
 	font-size: 1.1em;
+}
+
+.vsb-article-content h1 {
+	font-size: 1.7em;
 }
 
 .vsb-article-content blockquote {

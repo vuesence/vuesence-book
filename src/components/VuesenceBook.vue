@@ -173,8 +173,10 @@ export default {
 		// this.calculateHeadings();
 
 		VsbEventBus.$on("scrollTo", (item) => {
-			this.$refs.vsb.classList.remove("sidebar-open");
-			window.scrollTo(0, item.offsetTop - 70);
+			if (this.$refs.vsb) {
+				this.$refs.vsb.classList.remove("sidebar-open");
+			}
+			window.scrollTo(0, item.el.offsetTop - 70);			
 		})
 
 		VsbEventBus.$on("navigateTo", (item) => {

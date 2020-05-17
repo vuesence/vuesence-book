@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import marked from 'marked';
+
+// -------- highlight.js -------
 // import hljs from 'highlight.js';
 // import MarkdownIt from 'markdown-it';
 

@@ -1,61 +1,60 @@
-# Et qui caudam ille comites
+# Cosplay
 
-## Et tu nostri celebrant nostro
+*From Wikipedia, the free encyclopedia*
 
-Lorem markdownum ecce est est servantes credite Laertaque in quas sed.
-Insequitur lumen. Hinc quis praecinctus mundi!
+## Definition
 
-> Distantes ingenti ferendo [suadent fuerunt](http://tumidaeque.com/dare) est
-> inque habemus mutare viribus? Laestrygonis nocens: latus sine corpore naiadum
-> trahi, alvum, mille celanda. **Servit paene**, turbamve, adest tamen reliquit
-> tergusque: fama. Habent vitta [Festa quid victa](http://aeoliam.org/) adfata,
-> deus **illa antiqua** quaque undis visa senectae Herculea facinus.
+__Cosplay__  (コスプレ, kosupure), a portmanteau of the words __costume play__, is a performance art in which participants called cosplayers wear costumes and fashion accessories to represent a specific character. Cosplayers often interact to create a subculture, and a broader use of the term "cosplay" applies to any costumed role-playing in venues apart from the stage.
 
-## Imagine ille partem corpore invidit contra terebat
+Any entity that lends itself to dramatic interpretation may be taken up as a subject and it is not unusual to see genders switched. Favorite sources include anime, cartoons, comic books, manga, television series, and video games.
 
-Cum rima habent. Cognata et quidem nostri, *semineces* valvae: modo viguere
-rogant [praepetibus illi laniatum](http://www.exaristis.com/manuque). Vos nisi
-umeros et dura Aegides, qua tingui [astris
-gravi](http://artesrepertum.org/prosit.php)!
+![image](images/cosplay1.jpg)
 
-    if (net_commercial - web == 2 - serpBoot) {
-        digitize.windows_processor_it(dbms + pim);
-        map_gui -= software_rw_repeater;
-    } else {
-        cleanRamDebugger *= overwrite_sram_mtu;
-        grayscaleRowPermalink.rteIllegal(clock(5));
-    }
-    if (twitter_drag_icq(tape) < perl_wpa) {
-        firmware *= uddi;
-    }
-    if (cleanIcann == 3 + oop_horse) {
-        cell_insertion /= key_vle;
-    } else {
-        scrollSsh(backupBusLpi);
-        image_mainframe = volumeDashboardResolution;
-    }
-    ram.tunnelingRegistryStandalone(3, emulationLossless / cacheX);
-    if (upsAluSoftware) {
-        commerce(camelcase, -5);
-        bloatware(bankruptcyMemoryDac, point, 5);
-    } else {
-        xslt_storage += 4;
-    }
+## Etymology
 
-## Sentiat albo genuit
+The term "cosplay" is a Japanese portmanteau of the English terms costume and play. The term was coined by Nobuyuki Takahashi of Studio Hard after he attended the 1984 World Science Fiction Convention (Worldcon) in Los Angeles and saw costumed fans, which he later wrote about in an article for the Japanese magazine My Anime.
 
-Cumque ab ferit aetherias nostrum: conplexus hoc huc flectant. Hac nondum visus
-Ampycides Cinyras idque illum; ubi metum.
+Takahashi decided to coin a new word rather than use the existing translation of the English term "masquerade" because that translates into Japanese as "an aristocratic costume", which did not match his experience of the Worldcon.
 
-- Zancle si nymphe
-- Interea terra aliis obruta tu ensis
-- Stipite aer propago Caeneus Herculeo audenti posita
-- Quin quid
-- Aspicit maxime
+## Common Cosplay Judging Criteria
 
-Parte notamque singultibus Iolaus prosunt extremum dixit Thaumantea testis
-Pallas, labore. *Esse illa*, tela coeunt simul et exhalat, nam [adhuc
-vertice](http://patrio.io/). Facta navis multis, at ilia digitis dentes,
-contrahitur, alis scire movit [posset](http://www.nec.org/). Illi premebat *ipse
-carmine*; nec toto victum deinde auctor. Tanti ulla cervus flamma, per ipsi
-auditis saepius saxo **heros**, mugitus!
+| Criteria | Description | Example |
+|----------|-------------|---------|
+| Accuracy | 	Resemblance to the original character in terms of appearance. | Hair color/styling, Make-up |
+| Craftsmanship | 		Quality and details of the costume and props. | Level of detail, Amount of effort |
+| Presentation | 	Likeliness in terms of character portrayal and performance. | Acting, Posture |
+| Audience Impact | 	Stage presence and connection with the audience. | Eye contact |
+
+
+
+## History
+
+### Pre-20th century
+
+> Main articles: Masquerade ball, Halloween, and Costume party
+
+Masquerade balls were a feature of the Carnival season in the 15th century, and involved increasingly elaborate allegorical Royal Entries, pageants, and triumphal processions celebrating marriages and other dynastic events of late medieval court life. 
+
+They were extended into costumed public festivities in Italy during the 16th century Renaissance, generally elaborate dances held for members of the upper classes, which were particularly popular in Venice.
+
+### Fan costuming
+
+A.D. Condo's science fiction comic strip character Mr. Skygack, from Mars (a Martian ethnographer who comically misunderstands many Earthly affairs) is arguably the first fictional character that people emulated by wearing costumes, as in 1908 Mr. and Mrs. William Fell of Cincinnati, Ohio are reported to have attended a masquerade at a skating rink wearing Mr. Skygack and Miss Dillpickles costumes.
+
+
+## Documentaries_ and reality shows
+
+- *Cosplay Encyclopedia*, a 1996 film about Japanese cosplay released by Japan Media Supply. It was released in subtitled VHS by Anime Works in 1999, eventually being released onto DVD in 2002.[104]
+Otaku Unite!, a 2004 film about otaku subculture, features extensive footage of cosplayers.
+- *Akihabara Geeks*, a 2005 Japanese short film.
+- *Animania*: The Documentary is a 2007 film that explores the cosplay cultural phenomenon in North America, following four cosplayers from various ethnicities as they prepare to compete at Anime North, Canada's largest anime convention.
+
+
+### Related Links
+
+1. Tokyo Game Show 2019 Official site: https://expo.nikkeibp.co.jp/tgs/2019/en/
+2. Tokyo Game Show 2019 Official Twitter: https://twitter.com/tokyo_game_show
+3. Tokyo Game Show 2019 Official facebook: https://www.facebook.com/tokyogameshow
+
+
+![image](images/cosplay2.jpg)
