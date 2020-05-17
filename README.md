@@ -107,7 +107,7 @@ Self-explaining example of the `vbcfg.json` and articles of the documentation ca
 
 ## Areas for improvements / involvement
 - More convenient fenced code block highlighting
-- Default CSS improvement
+- CSS layout improvement (responsiveness)
 - Themes
 - Top nav bar
 - Footer for stand-alone version
