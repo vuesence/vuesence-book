@@ -4,7 +4,7 @@
 npm install @vuesence/book --save
 ```
 
-```vue
+```html
 <template>
   <div id="app" class="app">
     <vuesence-book 

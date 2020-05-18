@@ -4,9 +4,10 @@ Minimalistic Vue.js based documentation system component
 
 ![Node.js CI](https://github.com/altrusl/vuesence-book/workflows/Node.js%20CI/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/altrusl/vuesence-book/badge.svg)](https://snyk.io/test/github/altrusl/vuesence-book)
-[![Dependencies](https://david-dm.org/altrusl/vuesence-book.svg)](https://david-dm.org/altrusl/vuesence-book.svg)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=altrusl/vuesence-book)](https://dependabot.com)
+<!-- [![Dependencies](https://david-dm.org/altrusl/vuesence-book.svg)](https://david-dm.org/altrusl/vuesence-book.svg) -->
 
-![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg)
+![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.gif)
 
 # How to use
 
@@ -18,7 +19,7 @@ Minimalistic Vue.js based documentation system component
 npm install @vuesence/book --save
 ```
 
-```vue
+```html
 <template>
   <div id="app" class="app">
     <vuesence-book 
@@ -101,7 +102,7 @@ Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank"
 
 > ! The version on `codesandbox.io` might be slightly out of date
 
-![sbio](images/csbio.jpg)
+![sbio](https://altrusl.github.io/vuesence-book/images/csbio.jpg)
 
 ## Content management
 
@@ -112,11 +113,11 @@ Unlike many other documentation systems **Vuesence Book** is not a *static site 
 ```
 └── vb
     ├── pages
-   	│	├── intro.md
-   	│	├── desc.md
-   	│	└── rich-content.html
-	├── vbcfg.json
-	└── index.html
+    │   ├── intro.md
+    │   ├── desc.md
+    │   └── rich-content.html
+    ├── vbcfg.json
+    └── index.html
 ```
 
 Self-explaining example of the `vbcfg.json` and articles of the documentation can be found here - 
@@ -139,7 +140,7 @@ Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@
 
 ## Change Log
 
-- 0.3.44 first release
+- 0.4.0 first release
 - 0.4.2 small fixes on menu
 
 ## License

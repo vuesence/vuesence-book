@@ -9,4 +9,4 @@ Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank"
 
 > ! The version on `codesandbox.io` might be slightly out of date
 
-![sbio](images/csbio.jpg)
+![sbio](https://altrusl.github.io/vuesence-book/images/csbio.jpg)

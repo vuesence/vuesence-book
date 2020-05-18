@@ -8,11 +8,11 @@ Unlike many other documentation systems **Vuesence Book** is not a *static site 
 ```
 └── vb
     ├── pages
-   	│	├── intro.md
-   	│	├── desc.md
-   	│	└── rich-content.html
-	├── vbcfg.json
-	└── index.html
+    │   ├── intro.md
+    │   ├── desc.md
+    │   └── rich-content.html
+    ├── vbcfg.json
+    └── index.html
 ```
 
 Self-explaining example of the `vbcfg.json` and articles of the documentation can be found here - 

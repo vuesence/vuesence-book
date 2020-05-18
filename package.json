@@ -1,7 +1,7 @@
 {
   "name": "@vuesence/book",
   "description": "Help/documentation system",
-  "version": "0.4.4",
+  "version": "0.4.8",
   "private": false,
   "main": "dist/vuesence-book.umd.js",
   "module": "dist/vuesence-book.esm.js",

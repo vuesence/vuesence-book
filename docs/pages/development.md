@@ -15,7 +15,7 @@ Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@
 
 ## Change Log
 
-- 0.3.44 first release
+- 0.4.0 first release
 - 0.4.2 small fixes on menu
 
 ## License
