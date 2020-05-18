@@ -1,20 +1,10 @@
 <template>
 	<li class="vsb-nav-item" :class="`vsb-nav-item--${level}`">
 		<div class="vsb-nav-title">
-			<!-- <router-link
-				:is="item.to || !item.sections ? 'router-link' : 'div'"
-				:to="item.to || { name: 'article', params: { id: item.id } }"
-				@click.native="handleScrollToSection"
-				@click="handleExpand"
-				class="vsb-nav-link"
-				:class="{ 'vsb-nav-link--active': item.isActive }"
-			>
-				{{ item.title }}
-			</router-link> -->
 
 			<a
 				v-if="item.to || !item.sections"
-				@click="navigateTo()"
+				@click="handleClick"
 				class="vsb-nav-link"
 				:class="{ 'vsb-nav-link--active': item.isActive }"
 				rel="link"
@@ -71,6 +61,12 @@ export default {
 			return this.item.sections && this.item.sections.length;
 		},
 	},
+	data() {
+		return {
+			// isActive: false,
+			isExpanded: true,
+		}
+	},
 	props: {
 		item: Object,
 		level: Number,
@@ -85,19 +81,24 @@ export default {
 				this.isExpanded = !this.isExpanded;
 			}
 		},
-		navigateTo() {			
+		handleClick() {			
 			if (this.$el.closest(".vsb-article-navigation")) {
-				VsbEventBus.$emit("scrollTo", this.item);
+				VsbEventBus.$emit("scrollToInArticle", this.item);
 			} else {				
-				VsbEventBus.$emit("navigateTo", this.item);
+				VsbEventBus.$emit("navigateToArticle", this.item);
 				// this.$refs.link.classList.add("");
 			}
 		},
 	},
-	data() {
-		return {
-			isExpanded: true,
-		};
+	created() {
+		VsbEventBus.$on("navigateToArticle", (item) => {
+			if (this.item.id != item.id) {
+				this.isActive == false;
+			} else {
+				this.isActive == true;
+			}
+		});
 	},
+
 };
 </script>

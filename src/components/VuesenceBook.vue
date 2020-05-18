@@ -170,20 +170,21 @@ export default {
 		});
 
 		// this.article = this.articles[this.$route.params.id];
-		// this.calculateHeadings();
+		// this.buildArticleNavigation();
 
-		VsbEventBus.$on("scrollTo", (item) => {
+		VsbEventBus.$on("scrollToInArticle", (item) => {
 			if (this.$refs.vsb) {
 				this.$refs.vsb.classList.remove("sidebar-open");
 			}
 			window.scrollTo(0, item.el.offsetTop - 70);			
 		})
 
-		VsbEventBus.$on("navigateTo", (item) => {
+		VsbEventBus.$on("navigateToArticle", (item) => {
 			this.$refs.vsb.classList.remove("sidebar-open");
-			this.article = this.articles[item.id];
+			this.article = this.articles[item.id];			
+			// item.el.classList.add("isActive1");
 			if (this.useRouter) {
-				this.$router.push(item.id);
+				this.$router.push(item.id);				
 			}
 		})
 
@@ -204,21 +205,19 @@ export default {
 			this.$refs.vsb.classList.remove("sidebar-open");
 		},
 
+		// Track window scroll for reactive article navigation
 		trackScroll() {
+			// Get items with offset > 0 (visible from the top)
 			const offsets = 
 				this.articleNavList
 				.map((item) => item.el.getBoundingClientRect().top)
 				.map((item, index) => item > 0  ? index : null)
 				.filter(item => item !== null)
 
+			// Set `active` the first visible item
 			if(offsets.length > 0) {
-
-				if (this.articleNavList[offsets[0]].el.getBoundingClientRect().top < 100) {
-					Object.values(this.articleNavList).forEach((item) => {
-						item.isActive = false
-					})
-					this.articleNavList[offsets[0]].isActive = true;
-				} else if (offsets.length == 1) {
+				if (this.articleNavList[offsets[0]].el.getBoundingClientRect().top < 100
+					|| offsets.length == 1) {
 					Object.values(this.articleNavList).forEach((item) => {
 						item.isActive = false
 					})
@@ -226,7 +225,7 @@ export default {
 				}
 			}
 		},
-		calculateHeadings() {
+		buildArticleNavigation() {
 			this.$nextTick().then(() => {
 				this.articleNavTree = []
 				this.articleNavList = []
@@ -283,7 +282,7 @@ export default {
 	watch: {
 		article: {
 			handler() {
-				this.calculateHeadings();
+				this.buildArticleNavigation();
 			}
 		},            
 	}
