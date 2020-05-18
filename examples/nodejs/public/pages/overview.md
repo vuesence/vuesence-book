@@ -2,7 +2,7 @@
 
 **Vuesence Book** is a Vue.js component that can be used for building documentation systems.
 
-![VB-preview](images/vb-preview.jpg)
+![VB-preview](images/vb-preview.gif)
 
 It can be used as a Vue component in the Vue.js project or run directly in a browser
 
