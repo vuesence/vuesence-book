@@ -6,7 +6,7 @@
 				v-if="item.to || !item.sections"
 				@click="handleClick"
 				class="vsb-nav-link"
-				:class="{ 'vsb-nav-link--active': item.isActive }"
+				:class="{ 'vsb-nav-link--active': isActive || item.isActive }"
 				rel="link"
 			>
 				{{ item.title }}
@@ -15,7 +15,7 @@
 				v-else
 				@click="handleExpand"
 				class="vsb-nav-link"
-				:class="{ 'vsb-nav-link--active': item.isActive }"
+				:class="{ 'vsb-nav-link--active': isActive }"
 			>
 				{{ item.title }}
 			</div>
@@ -24,7 +24,7 @@
 				v-if="hasChildren"
 				class="vsb-nav-toggle"
 				@click="isExpanded = !isExpanded"
-				:class="{ 'vsb-nav-toggle--active': isExpanded }"
+				:class="{ 'vsb-nav-toggle--active': item.isExpanded }"
 			>
 				<!-- {{ isExpanded ? "-" : "+" }} -->
 				<span @click="handleExpand" class="arrow">
@@ -63,7 +63,7 @@ export default {
 	},
 	data() {
 		return {
-			// isActive: false,
+			isActive: false,
 			isExpanded: true,
 		}
 	},
@@ -90,15 +90,37 @@ export default {
 			}
 		},
 	},
-	created() {
-		VsbEventBus.$on("navigateToArticle", (item) => {
-			if (this.item.id != item.id) {
-				this.isActive == false;
-			} else {
-				this.isActive == true;
-			}
-		});
+	mounted() {
+		if (!this.$el.closest(".vsb-article-navigation")) {
+			VsbEventBus.$on("navigateToArticle", (itm) => {
+				if (this.item.id != itm.id) {
+					// this.item.isActive = false;
+					this.isActive = false;
+				} else {
+					// this.item.isActive = true;
+					this.isActive = true;
+				}
+			});
+		}
 	},
-
+	watch: {
+		item: {
+			handler() {
+				// this.isActive = this.item.isActive;
+				// console.log(this.$el.querySelector(".vsb-nav-link"));
+				
+				// if (this.item.isActive) {
+				// 	this.$el.querySelector(".vsb-nav-link").classList.add("vsb-nav-link--active");
+				// } else {
+				// 	this.$el.querySelector(".vsb-nav-link").classList.remove("vsb-nav-link--active");
+				// }
+				// console.log("aaaaaaaaaa");
+				// console.log(this.item.isActive);
+				// console.log(this.item);
+				// this.$forceUpdate();
+			}
+			
+		}
+	}
 };
 </script>

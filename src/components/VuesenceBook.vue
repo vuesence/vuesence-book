@@ -176,7 +176,8 @@ export default {
 			if (this.$refs.vsb) {
 				this.$refs.vsb.classList.remove("sidebar-open");
 			}
-			window.scrollTo(0, item.el.offsetTop - 70);			
+			// console.log(item.el.offsetTop);
+			window.scrollTo(0, item.el.offsetTop - 70);
 		})
 
 		VsbEventBus.$on("navigateToArticle", (item) => {
@@ -184,7 +185,7 @@ export default {
 			this.article = this.articles[item.id];			
 			// item.el.classList.add("isActive1");
 			if (this.useRouter) {
-				this.$router.push(item.id);				
+				this.$router.push(item.id);
 			}
 		})
 
