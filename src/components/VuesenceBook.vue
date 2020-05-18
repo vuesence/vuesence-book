@@ -44,6 +44,11 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		// path to configuration file (relative URL)
+		cfgPath: {
+			type: String,
+			default: "vbcfg.json"
+		}, 
 		// path to articles (relative URL)
 		articlePath: {
 			type: String,
@@ -92,7 +97,7 @@ export default {
 		}			
 
 		const xhr = new XMLHttpRequest()
-		xhr.open('GET', 'vbcfg.json', true)
+		xhr.open('GET', this.cfgPath, true)
 		xhr.onreadystatechange = () => {
 			if(xhr.readyState === 4) {
 				this.config = JSON.parse(xhr.responseText);

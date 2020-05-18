@@ -1,7 +1,7 @@
 {
   "name": "@vuesence/book",
   "description": "Help/documentation system",
-  "version": "0.4.2",
+  "version": "0.4.4",
   "private": false,
   "main": "dist/vuesence-book.umd.js",
   "module": "dist/vuesence-book.esm.js",
@@ -30,15 +30,14 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build --target lib --name vuesence-book ./src/wrapper.js && npm run cp-all",    
-
-    "cp-umd": "copyfiles -u 1 dist/vuesence-book.umd.min.js examples/browser/",
-    "cp-css": "copyfiles -u 1 src/css/* examples/browser/ && copyfiles src/css/* examples/nodejs/",
-    "cp-resources-to-browser-example": "copyfiles -u 1 -e public/index.html public/**/* examples/browser/",
-    "cp-resources-to-nodejs-example": "copyfiles -e public/index.html public/**/* examples/nodejs/",
-    "cp-resources-to-docs": "copyfiles -u 2 examples/browser/**/* docs/",
-    "cp-all": "npm run cp-umd && npm run cp-css && npm run cp-resources-to-browser-example && npm run cp-resources-to-nodejs-example && npm run cp-resources-to-docs"
-    
+    "build": "vue-cli-service build --target lib --name vuesence-book ./src/wrapper.js && npm run cp-all && npm run build-readme",
+    "cp:umd": "copyfiles -u 1 dist/vuesence-book.umd.min.js examples/browser/",
+    "cp:css": "copyfiles -u 1 src/css/* examples/browser/ && copyfiles src/css/* examples/nodejs/",
+    "cp:resources-to-browser-example": "copyfiles -u 1 -e public/index.html public/**/* examples/browser/",
+    "cp:resources-to-nodejs-example": "copyfiles -e public/index.html public/**/* examples/nodejs/",
+    "cp:resources-to-docs": "copyfiles -u 2 examples/browser/**/* docs/",
+    "cp-all": "npm-run-all -s cp:*",
+    "build-readme": "cat public/pages/README.part.top.md public/pages/example-nodejs.md public/pages/example-browser.md public/pages/features.md public/pages/playground.md public/pages/content-management.md public/pages/development.md > README.md"
   },
   "dependencies": {
     "marked": "^1.0.0",
@@ -55,6 +54,7 @@
     "copyfiles": "^2.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
+    "npm-run-all": "^4.1.5",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

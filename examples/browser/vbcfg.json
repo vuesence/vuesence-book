@@ -65,9 +65,19 @@
                 ]
             },
             {
+                "id": "content-management",
+                "title": "Content management",
+                "url": "content-management.md"
+            },            
+            {
                 "id": "playground",
                 "title": "Playground",
                 "url": "playground.md"
+            },            
+            {
+                "id": "development",
+                "title": "Development & Troubleshooting",
+                "url": "development.md"
             }
             
         ]

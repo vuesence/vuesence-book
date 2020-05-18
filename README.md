@@ -1,14 +1,10 @@
 # Vuesence-Book
 
-Minimalistic Vue.js based documentation system
+Minimalistic Vue.js based documentation system component
 
 ![Node.js CI](https://github.com/altrusl/vuesence-book/workflows/Node.js%20CI/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/altrusl/vuesence-book/badge.svg)](https://snyk.io/test/github/altrusl/vuesence-book)
 [![Dependencies](https://david-dm.org/altrusl/vuesence-book.svg)](https://david-dm.org/altrusl/vuesence-book.svg)
-
-<!-- # Overview -->
-
-<!-- Vuesence Book is a Vue component that can be used for help or documentation systems. -->
 
 ![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.jpg)
 
@@ -22,15 +18,19 @@ Minimalistic Vue.js based documentation system
 npm install @vuesence/book --save
 ```
 
-```html
+```vue
 <template>
   <div id="app" class="app">
-    <vuesence-book header-title="My Book" :use-router="false"/>
+    <vuesence-book 
+      header-title="My Book" 
+      :use-router="false"
+    />
   </div>
 </template>
 
 <script>
 import VuesenceBook from "@vuesence/book";
+
 export default {
   name: "App",
   components: {
@@ -41,55 +41,67 @@ export default {
 
 <style>
     @import './css/default.css';
+    /* @import './css/vuepress-style.css'; */
+    /* @import './css/google-style.css'; */
 </style>
 ```
-
 ## Browser usage example
 
 The **Vuesence Book** can be run as a stand-alone web component in the browser. `Vue` and `@vuesence/book` packages should be loaded as scripts. Vue-router must be disabled.
 
 ```html
-<head>
-	<script src="https://unpkg.com/vue"></script>
-	<script src="https://unpkg.com/@vuesence/book"></script>
-	
-	<link rel="stylesheet" href="https://unpkg.com/@vuesence/book/src/css/default.css">      
-</head>
+<!DOCTYPE html>
+<html lang="en">
 
-<body>	
-	<div id="app" class="app">
-		<vuesence-book
-			header-title="My Book"
-			:use-router="false"
-		/>
-	</div>
-</body>
+	<head>
+		<title>Vuesence Book demo</title>
 
-<script>
-	new Vue({ el: '#app' })
-</script>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="https://unpkg.com/@vuesence/book"></script>
 
+        <link rel="stylesheet" href="https://unpkg.com/@vuesence/book/src/css/default.css">      
+		<!-- You can plug in any custom CSS here to style the Vuesence Book-->
+		<!-- <link rel="stylesheet" href="css/vuepress-style.css"> -->
+		<!-- <link rel="stylesheet" href="css/google-style.css"> -->
+	</head>
+
+	<body>
+		<div id="app" class="app">
+			<vuesence-book
+				header-title="My Book"
+				:use-router="false"
+			/>
+		</div>
+	</body>
+
+	<script>
+		new Vue({ el: '#app' })
+	</script>
+
+</html>
 ```
-
-
 # Features
 
-- Simple, responsive, light, fast
-- Very suitable for embedding help/documentation content into a website
-- Easily and highly customizable with CSS
+- Simple, responsive, lightweight, fast
+- Easily and fully customizable with CSS
+- Very suitable for embedding help/documentation content into the website
 - Easy to use content management
 - Focus on performance - articles can be preloaded
+- Unlimited nesting levels for TOC tree menu
 - In general no dependencies (optional `marked` or other MD library for markdown support and `vue-router` for routing)
 
 
-## Detailed documentation
+# Documentation
 
-<a href="https://altrusl.github.io/vuesence-book/" target="_blank">https://altrusl.github.io/vuesence-book/</a>
+Detailed documentation can be found here - <a href="https://altrusl.github.io/vuesence-book/" target="_blank">https://altrusl.github.io/vuesence-book/</a>
 
 ## Playground
 
-Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank">codesandbox.io</a> (Node.js version, might be slightly out of date)
+Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank">codesandbox.io</a> (Node.js version)
 
+> ! The version on `codesandbox.io` might be slightly out of date
+
+![sbio](images/csbio.jpg)
 
 ## Content management
 
@@ -97,13 +109,25 @@ Unlike many other documentation systems **Vuesence Book** is not a *static site 
 
 `vbcfg.json` configuration file defines the content tree (TOC in the left column). It also contains links to articles in HTML or Markdown formats or the content of the article itself in an HTML format
 
+```
+└── vb
+    ├── pages
+   	│	├── intro.md
+   	│	├── desc.md
+   	│	└── rich-content.html
+	├── vbcfg.json
+	└── index.html
+```
+
 Self-explaining example of the `vbcfg.json` and articles of the documentation can be found here - 
 <a href="https://github.com/altrusl/vuesence-book/tree/master/docs" target="_blank">https://github.com/altrusl/vuesence-book/tree/master/docs</a>
 
-## Change Log
+## Troubleshooting
 
-- 0.3.44 first release
-- 0.4.2 small fixes on menu
+Any bugs, issues, feature and pull requests are welcome
+
+Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
+
 
 ## Areas for improvements / involvement
 - More convenient fenced code block highlighting
@@ -113,11 +137,12 @@ Self-explaining example of the `vbcfg.json` and articles of the documentation ca
 - Footer for stand-alone version
 - CEO issue
 
+## Change Log
 
-## Troubleshooting
-
-If something isn't working properly use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
+- 0.3.44 first release
+- 0.4.2 small fixes on menu
 
 ## License
 
 **@vuesence/book** package is freely distributable under the terms of the [MIT license](LICENSE).
+

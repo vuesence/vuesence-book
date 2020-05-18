@@ -4,6 +4,7 @@
 			:article-lazy-load="true"
 			articlePath="pages/"
 			header-title="Vuesence Book"
+			cfg-path="vbcfg.json"
 		/>
 	</div>
 	

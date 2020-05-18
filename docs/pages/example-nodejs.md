@@ -1,9 +1,16 @@
-# Node.js usage example
+## Node.js usage example
+
+```bash
+npm install @vuesence/book --save
+```
 
 ```vue
 <template>
   <div id="app" class="app">
-    <VuesenceBook header-title="My Book" :use-router="false"/>
+    <vuesence-book 
+      header-title="My Book" 
+      :use-router="false"
+    />
   </div>
 </template>
 

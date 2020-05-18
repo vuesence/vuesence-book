@@ -1,14 +1,13 @@
-# Browser usage example
+## Browser usage example
 
-The Vuesence Book can be run as a standalone web component in the browser. Vue.js and vuesence-book.umd.min.js must be loaded. Vue-router must be disabled.
+The **Vuesence Book** can be run as a stand-alone web component in the browser. `Vue` and `@vuesence/book` packages should be loaded as scripts. Vue-router must be disabled.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 
 	<head>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-		<title>vuesence-book demo</title>
+		<title>Vuesence Book demo</title>
 
 		<script src="https://unpkg.com/vue"></script>
 		<script src="https://unpkg.com/@vuesence/book"></script>
