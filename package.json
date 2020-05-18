@@ -1,7 +1,7 @@
 {
   "name": "@vuesence/book",
-  "description": "Help/documentation system",
-  "version": "0.4.8",
+  "description": "Vue.js based documentation system component",
+  "version": "0.4.9",
   "private": false,
   "main": "dist/vuesence-book.umd.js",
   "module": "dist/vuesence-book.esm.js",
@@ -9,7 +9,7 @@
   "browser": {
     "./sfc": "src/components/VuesenceBook.vue"
   },
-  "homepage": "https://github.com/altrusl/vuesence-book",
+  "homepage": "https://altrusl.github.io/vuesence-book/",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -25,8 +25,7 @@
   "keywords": [
     "vue",
     "documentation",
-    "documenting",
-    "help system"
+    "documenting"
   ],
   "scripts": {
     "dev": "vue-cli-service serve",
