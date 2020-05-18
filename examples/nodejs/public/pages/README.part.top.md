@@ -1,4 +1,4 @@
-# Vuesence-Book
+# Vuesence Book
 
 Minimalistic Vue.js based documentation system component
 
