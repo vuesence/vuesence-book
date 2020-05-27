@@ -1,7 +1,7 @@
 {
   "name": "@vuesence/book",
   "description": "Vue.js based documentation system component",
-  "version": "0.4.10",
+  "version": "0.4.50",
   "private": false,
   "main": "dist/vuesence-book.umd.js",
   "module": "dist/vuesence-book.esm.js",
