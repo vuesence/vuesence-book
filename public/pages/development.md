@@ -4,6 +4,14 @@ Any bugs, issues, feature and pull requests are welcome
 
 Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
 
+## Contribution
+
+Contribution are always welcome and recommended Here is how:
+
+- Fork the repository
+- Clone to your machine
+- Make your changes
+- Create a pull request
 
 ## Areas for improvements / involvement
 - More convenient fenced code block highlighting
