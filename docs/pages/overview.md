@@ -2,6 +2,7 @@
 
 **Vuesence Book** is a Vue.js component that can be used for building documentation systems.
 
+
 ### <a href='https://github.com/altrusl/vuesence-book' target='_blank'>[Project on GitHub]</a>
 
 ![Node.js CI](https://github.com/altrusl/vuesence-book/workflows/Node.js%20CI/badge.svg)
