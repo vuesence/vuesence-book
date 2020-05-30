@@ -15,6 +15,7 @@ Contribution are always welcome and recommended Here is how:
 
 ## Areas for improvements / involvement
 - More convenient fenced code block highlighting
+- Full-text search
 - CSS layout improvement (responsiveness)
 - Themes
 - Top nav bar
@@ -23,8 +24,8 @@ Contribution are always welcome and recommended Here is how:
 
 ## Change Log
 
-- 0.4.0 first release
 - 0.4.2 small fixes on menu
+- 0.4.50 release
 
 ## License
 
