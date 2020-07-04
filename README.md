@@ -129,9 +129,12 @@ Any bugs, issues, feature and pull requests are welcome
 
 Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
 
+- <a href="https://github.com/altrusl/vuesence-sliding-header" target="_blank">Sliding Header</a> - Vue.js component representing sliding header (or two different headers)
+- <a href="https://github.com/altrusl/vuesence-cloud-sync-button" target="_blank">Cloud Sync Button</a> - a button with cloud synchronization animation
+
 ## Contribution
 
-Contribution are always welcome and recommended Here is how:
+Contribution is always welcome and recommended. Here is how:
 
 - Fork the repository
 - Clone to your machine
