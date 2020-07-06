@@ -142,10 +142,12 @@ Contribution is always welcome and recommended. Here is how:
 - Make your changes
 - Create a pull request
 
+-------
 
 <img src="https://imgur.com/A92i02A.png" />
 You like it? GitHub star it and <a href="https://twitter.com/vuesence/status/1280075614897176577?s=20">twit it!</a>
 
+-------
 
 ## Areas for improvements / involvement
 - More convenient fenced code block highlighting
