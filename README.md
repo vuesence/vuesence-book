@@ -97,13 +97,6 @@ The **Vuesence Book** can be run as a stand-alone web component in the browser. 
 
 Detailed documentation can be found here - <a href="https://altrusl.github.io/vuesence-book/" target="_blank">https://altrusl.github.io/vuesence-book/</a>
 
-## Playground
-
-Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank">codesandbox.io</a> (Node.js version)
-
-> ! The version on `codesandbox.io` might be slightly out of date
-
-![sbio](https://altrusl.github.io/vuesence-book/images/csbio.jpg)
 
 ## Content management
 
@@ -124,20 +117,33 @@ Unlike many other documentation systems **Vuesence Book** is not a *static site 
 Self-explaining example of the `vbcfg.json` and articles of the documentation can be found here - 
 <a href="https://github.com/altrusl/vuesence-book/tree/master/docs" target="_blank">https://github.com/altrusl/vuesence-book/tree/master/docs</a>
 
-## Troubleshooting
 
-Any bugs, issues, feature and pull requests are welcome
+## Playground
 
-Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
+Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank">codesandbox.io</a> (Node.js version)
+
+> ! The version on `codesandbox.io` might be slightly out of date
+
+![sbio](https://altrusl.github.io/vuesence-book/images/csbio.jpg)
+
+## Check out my other Vue.js components
 
 - <a href="https://github.com/altrusl/vuesence-sliding-header" target="_blank">Sliding Header</a> - Vue.js component representing sliding header (or two different headers)
 - <a href="https://github.com/altrusl/vuesence-cloud-sync-button" target="_blank">Cloud Sync Button</a> - a button with cloud synchronization animation
 
 
 <img src="https://imgur.com/A92i02A.png" />
-You like Vuesence Book? GitHub star it and <a href="https://twitter.com/vuesence/status/1280084578288443392?s=20">twit it!</a>
+You like Vuesence Book? Star it and <a href="https://twitter.com/vuesence/status/1280084578288443392?s=20">retweet it!</a>
 
 -------
+
+
+## Troubleshooting
+
+Any bugs, issues, feature and pull requests are welcome
+
+Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@gmail.com">email</a>
+
 
 ## Contribution
 
