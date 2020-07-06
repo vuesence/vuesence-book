@@ -133,6 +133,12 @@ Please use GitHub's issue reporter or send me an <a href="mailto:ruslan.makarov@
 - <a href="https://github.com/altrusl/vuesence-sliding-header" target="_blank">Sliding Header</a> - Vue.js component representing sliding header (or two different headers)
 - <a href="https://github.com/altrusl/vuesence-cloud-sync-button" target="_blank">Cloud Sync Button</a> - a button with cloud synchronization animation
 
+
+<img src="https://imgur.com/A92i02A.png" />
+You like Vuesence Book? GitHub star it and <a href="https://twitter.com/vuesence/status/1280084578288443392?s=20">twit it!</a>
+
+-------
+
 ## Contribution
 
 Contribution is always welcome and recommended. Here is how:
@@ -141,13 +147,6 @@ Contribution is always welcome and recommended. Here is how:
 - Clone to your machine
 - Make your changes
 - Create a pull request
-
--------
-
-<img src="https://imgur.com/A92i02A.png" />
-You like Vuesence Book? GitHub star it and <a href="https://twitter.com/vuesence/status/1280084578288443392?s=20">twit it!</a>
-
--------
 
 ## Areas for improvements / involvement
 - More convenient fenced code block highlighting
