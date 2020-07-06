@@ -145,7 +145,7 @@ Contribution is always welcome and recommended. Here is how:
 -------
 
 <img src="https://imgur.com/A92i02A.png" />
-You like Vuecence Book? GitHub star it and <a href="https://twitter.com/vuesence/status/1280075614897176577?s=20">twit it!</a>
+You like Vuecence Book? GitHub star it and <a href="https://twitter.com/vuesence/status/1280084578288443392?s=20">twit it!</a>
 
 -------
 
