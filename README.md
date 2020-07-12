@@ -131,7 +131,7 @@ Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank"
 <!-- - <a href="https://github.com/altrusl/vuesence-book" target="_blank">Vuesence book</a> - minimalistic Vue.js based documentation component -->
 - <a href="https://github.com/altrusl/vuesence-sliding-header" target="_blank">Sliding header</a> - Vue.js component representing sliding header (or two different headers)
 - <a href="https://github.com/altrusl/vuesence-cloud-sync-button" target="_blank">Cloud Sync Button</a> - a button with cloud synchronization animation
-- <a href="https://github.com/altrusl/vuesence-model-window" target="_blank">Modal Window</a> - simple lightweight Modal Window Vue.js component
+- <a href="https://github.com/altrusl/vuesence-modal-window" target="_blank">Modal Window</a> - simple lightweight Modal Window Vue.js component
 
 
 <img src="https://imgur.com/A92i02A.png" />
