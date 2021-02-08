@@ -41,7 +41,7 @@
     "build-readme": "cat public/pages/README.part.top.md public/pages/example-nodejs.md public/pages/example-browser.md public/pages/features.md public/pages/playground.md public/pages/content-management.md public/pages/development.md > README.md"
   },
   "dependencies": {
-    "marked": "^1.1.1",
+    "marked": "^2.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },
