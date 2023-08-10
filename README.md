@@ -7,7 +7,7 @@ Minimalistic Vue.js based documentation system component
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=altrusl/vuesence-book)](https://dependabot.com)
 <!-- [![Dependencies](https://david-dm.org/altrusl/vuesence-book.svg)](https://david-dm.org/altrusl/vuesence-book.svg) -->
 
-![VB-preview](https://altrusl.github.io/vuesence-book/images/vb-preview.gif)
+![VB-preview](https://vuesence.github.io/vuesence-book/images/vb-preview.gif)
 
 
 # How to use
