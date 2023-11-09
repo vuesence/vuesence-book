@@ -7,7 +7,7 @@ Minimalistic Vue.js based documentation system component
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=altrusl/vuesence-book)](https://dependabot.com)
 <!-- [![Dependencies](https://david-dm.org/altrusl/vuesence-book.svg)](https://david-dm.org/altrusl/vuesence-book.svg) -->
 
-![VB-preview](https://vuesence.github.io/book/images/vb-preview.gif)
+![VB-preview](https://vuesence.github.io/vuesence-book/images/vb-preview.gif)
 
 
 # How to use
@@ -95,7 +95,7 @@ The **Vuesence Book** can be run as a stand-alone web component in the browser. 
 
 # Documentation
 
-Detailed documentation can be found here - <a href="https://vuesence.github.io/book/" target="_blank">https://vuesence.github.io/book/</a>
+Detailed documentation can be found here - <a href="https://vuesence.github.io/vuesence-book/" target="_blank">https://vuesence.github.io/vuesence-book/</a>
 
 
 ## Content management
@@ -115,7 +115,7 @@ Unlike many other documentation systems **Vuesence Book** is not a *static site 
 ```
 
 Self-explaining example of the `vbcfg.json` and articles of the documentation can be found here - 
-<a href="https://github.com/vuesence/book/tree/master/docs" target="_blank">https://github.com/vuesence/book/tree/master/docs</a>
+<a href="https://github.com/vuesence/vuesence-book/tree/master/docs" target="_blank">https://github.com/vuesence/vuesence-book/tree/master/docs</a>
 
 
 ## Playground

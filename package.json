@@ -1,7 +1,7 @@
 {
   "name": "@vuesence/book",
-  "description": "Vue.js based documentation system component",
-  "version": "0.6.3",
+  "description": "Vue.js 2 based documentation system component",
+  "version": "0.6.4",
   "private": false,
   "main": "dist/vuesence-book.umd.js",
   "module": "dist/vuesence-book.esm.js",
@@ -9,14 +9,14 @@
   "browser": {
     "./sfc": "src/components/VuesenceBook.vue"
   },
-  "homepage": "https://vuesence.github.io/book/",
+  "homepage": "https://vuesence.github.io/vuesence-book/",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuesence/book.git"
+    "url": "git+https://github.com/vuesence/vuesence-book.git"
   },
   "author": {
     "name": "Ruslan Makarov",
