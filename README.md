@@ -95,7 +95,7 @@ The **Vuesence Book** can be run as a stand-alone web component in the browser. 
 
 # Documentation
 
-Detailed documentation can be found here - <a href="https://altrusl.github.io/vuesence-book/" target="_blank">https://altrusl.github.io/vuesence-book/</a>
+Detailed documentation can be found here - <a href="https://vuesence.github.io/book/" target="_blank">https://vuesence.github.io/book/</a>
 
 
 ## Content management
@@ -124,7 +124,7 @@ Try it on <a href="https://codesandbox.io/s/vuesence-book-0rfh5" target="_blank"
 
 > ! The version on `codesandbox.io` might be slightly out of date
 
-![sbio](https://altrusl.github.io/vuesence-book/images/csbio.jpg)
+![sbio](https://vuesence.github.io/book/images/csbio.jpg)
 
 ## Check out my other Vue.js components
 
